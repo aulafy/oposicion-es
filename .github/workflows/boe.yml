@@ -29,5 +29,5 @@ jobs:
       - name: Detectar normas que requieren revisión editorial
         run: |
           python3 mantenimiento/vigilar_leyes.py >> "$GITHUB_STEP_SUMMARY"
-          git add mantenimiento/revision-leyes.json
+          git add mantenimiento/revision-leyes.json mantenimiento/revision-pendiente.json
           if ! git diff --cached --quiet; then git commit -m 'Registrar novedades del BOE para revisión' && git push; fi

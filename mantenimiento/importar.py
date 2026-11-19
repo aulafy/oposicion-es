@@ -19,6 +19,13 @@ def importar(origen):
     bancos = {k: todos[k] for k in PUBLICOS}
     preguntas = [q for banco in bancos.values() for q in banco]
     ids = {q["id"] for q in preguntas}
+    anterior = DESTINO / "bancos.json"
+    if anterior.exists():
+        publicados = json.loads(anterior.read_text(encoding="utf-8"))
+        faltan = {q["id"] for banco in publicados.values() for q in banco} - ids
+        if faltan:
+            muestra = ", ".join(sorted(faltan)[:5])
+            raise ValueError(f"La exportación omite {len(faltan)} ejercicios publicados ({muestra}).")
     citas = [c for q in preguntas for c in ([q["cita"]] if q.get("cita") else []) + q.get("citas", [])]
     claves = {c["norma"] + "|" + c["bloque"] for c in citas if "norma" in c}
     normas = {c["norma"] for c in citas if "norma" in c}
