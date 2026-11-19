@@ -1078,6 +1078,29 @@ $('#tema').onclick = cambiaTema; if ($('#temaM')) $('#temaM').onclick = cambiaTe
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', aplicaTema);
 aplicaTema();
 
+function mostrarActualizacion() {
+  const d = dialogo(`<div class="dh"><h2>Actualizar datos</h2><button class="btn ghost sm" data-cerrar>Cerrar</button></div>
+    <div class="db"><p>Busca nuevas preguntas, leyes y convocatorias en el repositorio de Plaza. Se conserva tu progreso y puedes seguir con el test abierto.</p>
+    <p role="status"></p></div><div class="df"><button class="btn primary" type="button">Buscar actualizaciones</button></div>`);
+  const boton = $('.df button', d);
+  const estado = $('[role="status"]', d);
+  boton.onclick = async () => {
+    boton.disabled = true;
+    estado.textContent = 'Comprobando los datos publicados…';
+    const resultado = await Plaza.datos.comprobar();
+    const mensajes = {
+      actualizado: 'Actualización preparada. Termina tu sesión y vuelve a abrir Plaza para usar los datos nuevos.',
+      preparada: 'Tienes una actualización preparada. Vuelve a abrir Plaza cuando termines tu sesión.',
+      'al-dia': 'Los datos están al día.',
+      'sin-conexion': 'No se pudo contactar con GitHub. Puedes seguir estudiando con los datos actuales.',
+      error: 'No se pudo aplicar la actualización. Puedes seguir estudiando con los datos actuales.',
+    };
+    estado.textContent = mensajes[resultado.estado];
+    boton.disabled = false;
+  };
+}
+$$('[data-actualizar]').forEach(boton => boton.onclick = mostrarActualizacion);
+
 // Aviso al completar la actualización de los datos.
 window.addEventListener('plaza:datos-actualizados', () => toast('Datos actualizados al último BOE: se aplicarán al volver a abrir Plaza'));
 

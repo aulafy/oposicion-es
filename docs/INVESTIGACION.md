@@ -1,0 +1,7 @@
+# Investigación sobre fiabilidad de modelos jurídicos
+
+Aulafy.net investiga si editar de forma dirigida los pesos de un modelo preentrenado puede reducir sus afirmaciones sin respaldo. «Cirugía de pesos» es el nombre que damos aquí a esas intervenciones. El interés está en comprobar qué puede aprender o recuperar el modelo tras la edición y cuánto de ese efecto se mantiene ante artículos, preguntas y redacciones que no vio durante el ajuste.
+
+Para medirlo, se puede comparar el mismo modelo antes y después de la intervención con preguntas reservadas para evaluación, fijando la redacción legal de referencia. Entre los errores que interesa contar están las citas inexistentes, las cifras y plazos incorrectos y las respuestas que usan una redacción distinta de la aplicable. Una comparación adicional puede medir qué ocurre cuando el modelo recibe el artículo como contexto. Reducir la dependencia de la recuperación documental (RAG) es un objetivo de investigación, pendiente de validación para cada tarea y modelo.
+
+En la edición pública, las claves de los tests están fijadas en el banco de preguntas. El tutor opcional usa el modelo local que elijas en Ollama y recibe el artículo asociado a la pregunta como contexto. Así puedes probar la app con un modelo estándar. Los resultados de ese tutor dependen del modelo elegido y pueden contener errores. El aviso del README explica cómo contrastar el material con la fuente oficial. [Aviso de responsabilidad](../README.md#aviso-de-responsabilidad)

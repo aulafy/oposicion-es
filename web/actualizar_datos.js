@@ -23,7 +23,10 @@
       const original = await bundled(), guardado = estado();
       // Si la app se actualizó con datos incluidos más recientes que los descargados, se parte de los incluidos.
       const anterior = guardado && !(original.generado >= guardado.generado) ? guardado : null;
-      if (nuevo.version === (anterior ? anterior.version : original.version)) return { estado: 'al-dia', version: nuevo.version };
+      if (nuevo.version === (anterior ? anterior.version : original.version)) {
+        const preparada = anterior && anterior.version !== inicial?.version;
+        return { estado: preparada ? 'preparada' : 'al-dia', version: nuevo.version };
+      }
       if (nuevo.generado < (anterior || original).generado) return { estado: 'al-dia' };
       nombre = prefijo + nuevo.version;
       const cache = await w.caches.open(nombre), vieja = anterior ? await w.caches.open(prefijo + anterior.version) : null;
@@ -37,6 +40,19 @@
           r = new Response(b, { headers: { 'Content-Type': 'application/json' } }); n++; total += b.byteLength;
         }
         await cache.put(p, r);
+      }
+      // Los identificadores anteriores siguen disponibles para el historial y los repasos.
+      const rutaBancos = 'datos/bancos.json';
+      if (!nuevo.ficheros[rutaBancos]) throw new Error('Falta el banco de preguntas');
+      const huellaAnterior = (anterior || original).ficheros[rutaBancos]?.sha256;
+      if (nuevo.ficheros[rutaBancos].sha256 !== huellaAnterior) {
+        const bancosLocales = async almacen => (await almacen?.match(rutaBancos) || await fetchReal(rutaBancos)).json();
+        const antes = await bancosLocales(vieja);
+        const despues = await bancosLocales(cache);
+        const ids = new Set(Object.values(despues).flat().map(pregunta => pregunta.id));
+        if (Object.values(antes).some(banco => banco.some(pregunta => !ids.has(pregunta.id)))) {
+          throw new Error('El banco nuevo omite preguntas de la versión anterior');
+        }
       }
       // La versión solo cambia cuando todos sus ficheros están guardados.
       try { w.localStorage.setItem('plaza.datos', JSON.stringify({ version: nuevo.version, generado: nuevo.generado, manifiesto: nuevo })); } catch (e) { throw new Error('No se pudo guardar la versión de los datos'); }

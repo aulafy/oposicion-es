@@ -13,3 +13,5 @@
 **La fecha del catálogo parece antigua.** Mira la fecha de revisión en Oposiciones. Conéctate a internet, abre Plaza, espera a que termine la descarga y vuelve a cargar. Consulta el BOE y las bases antes de presentar una solicitud.
 
 **Uso Gmail en el navegador y no se abre el borrador.** Envía tu comentario a learntouseai@gmail.com desde Gmail. Incluye la pregunta o el anuncio y qué esperabas ver.
+
+**Quiero buscar datos nuevos ahora.** Pulsa **Actualizar datos** en el menú (↻ en móvil) y elige **Buscar actualizaciones**. Si hay novedades, termina el test o simulacro actual antes de volver a abrir Plaza. La descarga conserva los bancos anteriores si falla y mantiene las preguntas, el historial y los repasos si se aplica. Usa el mismo navegador y dirección para conservar el progreso.
