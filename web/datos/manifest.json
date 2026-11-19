@@ -234,13 +234,13 @@
     },
     "datos/oposiciones.json": {
       "bytes": 1042073,
-      "sha256": "f7cf2406054e26a47e6af91af3684c8f12cc143951b07a5de924396abc610f8e"
+      "sha256": "72277d0aebd511e09b583f193c9272c969d4ff0dd04002abd88b4ce084f27669"
     },
     "datos/versiones.json": {
       "bytes": 153239,
       "sha256": "e2828c0cf8c7370b8db7f68b365ebe13904d6338dff3be107659d605faba04a6"
     }
   },
-  "generado": "2026-11-19T20:15:37.808538+00:00",
-  "version": "fcd96563eb42"
+  "generado": "2026-11-19T20:47:39.177673+00:00",
+  "version": "1f8829425110"
 }
