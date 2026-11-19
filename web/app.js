@@ -442,18 +442,31 @@ rutas.practicar = async () => {
   const formulario = $('#practica-form');
   const resumenTest = $('#practica-resumen', formulario);
   const iniciar = $('#go', formulario);
-  const leer = () => {
+  let configuracion, revision = 0;
+  async function actualizar() {
+    const actual = ++revision;
     const datos = new FormData(formulario);
-    const bancos = datos.getAll('tema');
-    const disponibles = bancos.reduce((total, b) => total + (R.bancos[b]?.n || 0), 0);
-    return { bancos, n: Math.min(Number(datos.get('cantidad')), disponibles), tipo: datos.get('tipo') };
-  };
-  function actualizar() {
-    const cfg = leer();
-    const total = cfg.bancos.length;
-    const seleccion = total === o.temas.length ? 'Todos los temas' : total === 1 ? TEMAS[cfg.bancos[0]] : `${total} temas`;
-    resumenTest.innerHTML = total ? `<strong>Hasta ${cfg.n} preguntas</strong><span>${esc(seleccion)} · ${cfg.tipo ? tipos.get(cfg.tipo) : 'Todos los tipos'}</span>` : '<span>Marca al menos un tema para empezar.</span>';
-    iniciar.disabled = !total;
+    const bancos = datos.getAll('tema'), tipo = datos.get('tipo');
+    const total = bancos.length;
+    iniciar.disabled = true;
+    configuracion = null;
+    if (!total) {
+      resumenTest.textContent = 'Marca al menos un tema para empezar.';
+      return;
+    }
+    resumenTest.textContent = 'Contando preguntas disponibles…';
+    try {
+      const params = new URLSearchParams({ bancos: bancos.join(','), tipo });
+      const disponibles = await api('/disponibles?' + params);
+      if (actual !== revision) return;
+      const n = Math.min(Number(datos.get('cantidad')), disponibles.total);
+      const seleccion = total === o.temas.length ? 'Todos los temas' : total === 1 ? TEMAS[bancos[0]] : `${total} temas`;
+      resumenTest.innerHTML = n ? `<strong>${n} preguntas</strong><span>${esc(seleccion)} · ${tipo ? tipos.get(tipo) : 'Todos los tipos'}</span>` : 'No hay preguntas con estos filtros.';
+      configuracion = { bancos, n, tipo };
+      iniciar.disabled = !n;
+    } catch (error) {
+      if (actual === revision) resumenTest.textContent = error.message;
+    }
   }
   formulario.addEventListener('change', actualizar);
   $$('[data-marcar]', formulario).forEach((b) => b.onclick = () => {
@@ -463,8 +476,8 @@ rutas.practicar = async () => {
   });
   formulario.addEventListener('submit', (e) => {
     e.preventDefault();
-    const cfg = leer();
-    if (!cfg.bancos.length) return;
+    const cfg = configuracion;
+    if (!cfg?.n) return;
     S.practica = { ...S.practica, [codigo]: cfg };
     save();
     empezar({ titulo: 'Test personalizado', ...cfg });
@@ -480,30 +493,34 @@ function empezar(s) { SES = { ...s, items: [], t0: Date.now() }; irA('#/test'); 
 const op = (o) => { let x = String(o).trim().replace(/(\s+[yo])?\s*[;,:.]$/u, '').replace(/[;,]\s+[yo]$/u, ''); return x.charAt(0).toLocaleUpperCase('es') + x.slice(1); };
 async function siguiente(s) {
   if (s.lista) return s.lista[s.items.length]?.q || null;  // preguntas del resultado anterior
-  const R = await resumen(); const vistos = new Set(s.items.map((x) => x.q.id));
-  for (let k = 0; k < 30; k++) {
-    let url;
-    if (s.fallos) {
-      const id = (s.cola || pendientes()).find((i) => !vistos.has(i) && S.rep[i]); if (!id) return null;
-      try { const q = await api('/pregunta_id?id=' + encodeURIComponent(id)); q.banco = q.banco || S.rep[id].b; return q; }
-      catch (e) {
-        if (e.status !== 404 || e.message !== 'no existe') throw e;
-        delete S.rep[id]; save(); continue;  // El banco confirma que la pregunta ya no existe.
+  const vistos = new Set(s.items.map(x => x.q.id));
+  if (s.fallos) {
+    for (const id of s.cola || pendientes()) {
+      if (vistos.has(id) || !S.rep[id]) continue;
+      try {
+        return await api('/pregunta_id?repaso=1&id=' + encodeURIComponent(id));
+      } catch (error) {
+        if (error.status !== 410 && error.status !== 404) throw error;
       }
     }
-    else if (s.norma) url = `/pregunta?norma=${encodeURIComponent(s.norma)}${s.bloque ? '&bloque=' + encodeURIComponent(s.bloque) : ''}&excluir=${[...vistos].join(',')}`;
-    else {
-      const w = s.bancos.map((b) => Math.sqrt((R.bancos[b] || {}).n || 0)); let r = Math.random() * w.reduce((a, b) => a + b, 0); let b = s.bancos[0];
-      for (let i = 0; i < w.length; i++) { r -= w[i]; if (r <= 0) { b = s.bancos[i]; break; } }
-      url = `/pregunta?banco=${b}${s.tipo ? '&tipo=' + s.tipo : ''}&excluir=${[...vistos].join(',')}`;
-    }
-    try { const q = await api(url); if (!vistos.has(q.id)) return q; } catch (e) {
-      if (e.status !== 404 || e.message !== 'sin preguntas') throw e;
-      if (s.norma) return null;
-    }
+    return null;
   }
-  return null;
+  const params = new URLSearchParams({ excluir: [...vistos].join(',') });
+  if (s.norma) {
+    params.set('norma', s.norma);
+    if (s.bloque) params.set('bloque', s.bloque);
+  } else {
+    params.set('bancos', s.bancos.join(','));
+    if (s.tipo) params.set('tipo', s.tipo);
+  }
+  try {
+    return await api('/pregunta?' + params);
+  } catch (error) {
+    if (error.status !== 404) throw error;
+    return null;
+  }
 }
+
 /* Opciones del test como grupo: ↑ ↓ recorren (foco itinerante), Intro o Espacio responden. */
 function flechasOpciones(ol) {
   if (!ol) return; ol.setAttribute('role', 'group'); ol.setAttribute('aria-label', 'Opciones de respuesta');

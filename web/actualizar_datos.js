@@ -6,11 +6,24 @@
   const bundled = () => incluida || (incluida = fetchReal('datos/manifest.json').then(r => { if (!r.ok) throw new Error('No se pudo leer el manifiesto incluido'); return r.json(); }).then(validar));
   // Una sesión de estudio mantiene la versión con la que se abrió.
   const inicial = estado();
-  const cacheInicial = inicial && w.caches.open(prefijo + inicial.version).catch(() => null);
+  async function cacheCompleta(version, original) {
+    if (!version || original.generado >= version.generado) return null;
+    try {
+      const cache = await w.caches.open(prefijo + version.version);
+      const rutas = new Set((await cache.keys()).map(r => r.url));
+      const completa = Object.entries(version.manifiesto.ficheros).every(([ruta, ficha]) =>
+        ficha.sha256 === original.ficheros[ruta]?.sha256 || rutas.has(new URL(ruta, location.href).href));
+      return completa ? cache : null;
+    } catch {
+      return null;
+    }
+  }
+  const cacheInicial = inicial ? bundled().then(original => cacheCompleta(inicial, original)) : null;
   // Tiempo máximo: 15 s más 1 s por cada 50 kB, para que el banco (11,5 MB) también llegue con datos móviles lentos.
   const descargar = async (url, json, bytes = 0) => { const c = new AbortController(), t = setTimeout(() => c.abort(), 15000 + bytes / 50); try { const r = await fetchReal(url, { cache: 'no-store', signal: c.signal }); if (!r.ok) throw new Error('No se pudo descargar ' + url); return json ? await r.json() : await r.arrayBuffer(); } finally { clearTimeout(t); } };
   async function actualizar() {
     let nuevo, nombre, confirmado = false;
+    const recuperando = inicial && !(await cacheInicial);
     try {
       let base;
       try {
@@ -23,17 +36,18 @@
       const original = await bundled(), guardado = estado();
       // Si la app se actualizó con datos incluidos más recientes que los descargados, se parte de los incluidos.
       const anterior = guardado && !(original.generado >= guardado.generado) ? guardado : null;
-      if (nuevo.version === (anterior ? anterior.version : original.version)) {
-        const preparada = anterior && anterior.version !== inicial?.version;
+      const vieja = await cacheCompleta(anterior, original);
+      if (nuevo.version === (vieja ? anterior.version : original.version)) {
+        const preparada = vieja && (anterior.version !== inicial?.version || recuperando);
         return { estado: preparada ? 'preparada' : 'al-dia', version: nuevo.version };
       }
       if (nuevo.generado < (anterior || original).generado) return { estado: 'al-dia' };
       nombre = prefijo + nuevo.version;
-      const cache = await w.caches.open(nombre), vieja = anterior ? await w.caches.open(prefijo + anterior.version) : null;
+      const cache = await w.caches.open(nombre);
       let n = 0, total = 0;
       for (const [p, v] of Object.entries(nuevo.ficheros)) {
         if (original.ficheros[p]?.sha256 === v.sha256) continue;
-        let r = anterior?.manifiesto.ficheros[p]?.sha256 === v.sha256 ? await vieja.match(p) : null;
+        let r = anterior?.manifiesto.ficheros[p]?.sha256 === v.sha256 ? await vieja?.match(p) : null;
         if (!r) {
           const b = await descargar(base + p, false, v.bytes), hash = Array.from(new Uint8Array(await w.crypto.subtle.digest('SHA-256', b)), x => x.toString(16).padStart(2, '0')).join('');
           if (b.byteLength !== v.bytes || hash !== v.sha256) throw new Error('Datos dañados: ' + p);
@@ -44,7 +58,7 @@
       // Los identificadores anteriores siguen disponibles para el historial y los repasos.
       const rutaBancos = 'datos/bancos.json';
       if (!nuevo.ficheros[rutaBancos]) throw new Error('Falta el banco de preguntas');
-      const huellaAnterior = (anterior || original).ficheros[rutaBancos]?.sha256;
+      const huellaAnterior = (vieja ? anterior : original).ficheros[rutaBancos]?.sha256;
       if (nuevo.ficheros[rutaBancos].sha256 !== huellaAnterior) {
         const bancosLocales = async almacen => (await almacen?.match(rutaBancos) || await fetchReal(rutaBancos)).json();
         const antes = await bancosLocales(vieja);
@@ -70,7 +84,8 @@
       const m = await bundled();
       if (m.generado >= inicial.generado || inicial.manifiesto.ficheros[p].sha256 === m.ficheros[p]?.sha256) return null;
       const cache = await cacheInicial;
-      const respuesta = cache && await cache.match(p);
+      if (!cache) return null;
+      const respuesta = await cache.match(p);
       if (!respuesta) throw new Error('Faltan datos de la actualización. Vuelve a abrir Plaza.');
       return respuesta;
     }

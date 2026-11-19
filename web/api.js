@@ -35,12 +35,30 @@ function crearRutasPlaza(leer) {
   const publica = (q) => ({ id: q.id, tipo: q.tipo, banco: datos.banco[q.id], enunciado: q.enunciado, opciones: q.opciones, revisar: !!q.revisar_preparador });
   const usable = (q, M, conv) => !q.difiere_version_convocatoria_PJC_1549_2025 && !(M.retiradas[conv] || {})[q.id] && !M.ambiguas[q.id];
 
+  function candidatas(B, M, p) {
+    const bancos = p.norma ? Object.keys(B) : (p.bancos || p.banco || 'bloque4').split(',');
+    const excluir = new Set((p.excluir || '').split(','));
+    const preguntas = bancos.flatMap(k => Object.hasOwn(B, k) ? B[k] : []).filter(q =>
+      (!p.norma || (q.cita?.norma === p.norma && (!p.bloque || q.cita.bloque === p.bloque))) &&
+      (!p.tipo || q.tipo === p.tipo) && usable(q, M, p.conv || '') && !excluir.has(q.id));
+    return [...new Map(preguntas.map(q => [q.id, q])).values()];
+  }
+
   const rutas = {
-    async '/pregunta_id'(p) { const { porId } = await datos(); const q = porId[p.id]; return q ? resp(publica(q)) : resp({ error: 'no existe' }, 404); },
+    async '/pregunta_id'(p) {
+      const { porId, M } = await datos();
+      const q = porId[p.id];
+      if (!q) return resp({ error: 'no existe' }, 404);
+      if (p.repaso && !usable(q, M, p.conv || (['justicia', 'justicia_org', 'procesales'].includes(datos.banco[q.id]) ? 'justicia2025' : ''))) return resp({ error: 'pregunta excluida' }, 410);
+      return resp(publica(q));
+    },
+    async '/disponibles'(p) {
+      const { B, M } = await datos();
+      return resp({ total: p.bancos ? candidatas(B, M, p).length : 0 });
+    },
     async '/pregunta'(p) {
       const { B, M } = await datos();
-      const banco = p.norma ? Object.values(B).flat().filter(q => q.cita && q.cita.norma === p.norma && (!p.bloque || q.cita.bloque === p.bloque)) : (B[p.banco || 'bloque4'] || B.bloque4);
-      const qs = banco.filter(q => (!p.tipo || q.tipo === p.tipo) && usable(q, M, p.conv || '') && !(p.excluir || '').split(',').includes(q.id));
+      const qs = candidatas(B, M, p);
       if (!qs.length) return resp({ error: 'sin preguntas' }, 404);
       return resp(publica(eligePonderado(qs, M)));
     },

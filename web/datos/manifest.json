@@ -1,8 +1,8 @@
 {
   "ficheros": {
     "datos/bancos.json": {
-      "bytes": 11531623,
-      "sha256": "62dbb7fc7c950f20567a8ef9404161b03a24794f80325b6885255a8baa3f3f6c"
+      "bytes": 11531609,
+      "sha256": "701c85937cb48d89cf8a42cfd07d424a5decb2d8ef28abaf1d32ae7c09cd4438"
     },
     "datos/explicaciones.json": {
       "bytes": 3319042,
@@ -241,6 +241,6 @@
       "sha256": "e2828c0cf8c7370b8db7f68b365ebe13904d6338dff3be107659d605faba04a6"
     }
   },
-  "generado": "2026-11-19T20:00:53.529497+00:00",
-  "version": "235fe4530d0f"
+  "generado": "2026-11-19T20:15:37.808538+00:00",
+  "version": "fcd96563eb42"
 }
