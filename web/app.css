@@ -795,3 +795,9 @@ button.icon-btn{cursor:pointer;padding:0}
 .tutor-local label {display:grid;gap:.45rem;font-weight:600;margin-block:1rem}
 .tutor-local select,.tutor-local textarea {font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);padding:.7rem}
 .tutor-local .respuesta {white-space:pre-wrap;line-height:1.6;margin-top:1rem}
+.tutor-guia {margin-block: .8rem 1rem; border: 1px solid var(--line); border-radius: .6rem; padding: .8rem 1rem}
+.tutor-guia summary {cursor: pointer; font-weight: 600}
+.tutor-guia ol {padding-inline-start: 1.55rem}
+.tutor-guia li {padding-inline-start: .25rem; margin-block: .65rem}
+.tutor-comando {display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin-top: .5rem}
+.tutor-comando code {padding: .45rem; border: 1px solid var(--line); border-radius: .3rem; user-select: all}

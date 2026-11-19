@@ -232,31 +232,97 @@ function enlazaFundamento(root) {
 function tutorCTA() { return `<div class="tutor-cta"><span class="ico">${ic('ia')}</span><div><b>¿Te queda alguna duda?</b><span>Pregúntale al tutor por qué, pídele un ejemplo o un truco para recordarlo.</span></div><button class="btn sm" data-tutor>Preguntar</button></div>`; }
 async function abrirTutor(q, r, res, convocatoria = CONV_DE[q.banco] || '') {
   const d = dialogo(`<div class="dh"><div><p class="eyebrow">Tutor local</p><h2>Entender esta respuesta</h2></div><button class="btn ghost" data-cerrar>Cerrar</button></div>
-    <form class="db tutor-local"><p>${esc(q.enunciado)}</p><p><b>Respuesta correcta</b> · ${esc(op(q.opciones[res.correcta]))}</p>
-    <label>Modelo de tu ordenador<select required></select></label><p role="status">Buscando modelos en Ollama…</p>
-    <label>Tu duda<textarea required maxlength="600">¿Por qué es correcta esta respuesta?</textarea></label>
-    <button class="btn primary" disabled>Explicar con Ollama</button>
-    <div class="respuesta" aria-live="polite"></div></form>`);
+    <form class="db tutor-local">
+    <p role="status">Buscando modelos en Ollama…</p>
+    <details class="tutor-guia">
+      <summary>Configurar el tutor en tres pasos</summary>
+      <ol>
+        <li><b>Abre Ollama en tu ordenador.</b> Si aún no lo tienes, <a href="https://ollama.com/download" target="_blank" rel="noopener">descárgalo aquí</a> e instálalo.</li>
+        <li><b>Descarga un modelo ligero.</b> Abre Terminal (macOS o Linux) o PowerShell (Windows). Pega este comando, pulsa Intro y espera a que termine:
+          <div class="tutor-comando"><code>ollama pull qwen3:1.7b</code><button class="btn ghost sm" type="button" data-copiar>Copiar</button></div>
+        </li>
+        <li><b>Selecciona el modelo en Plaza.</b> Pulsa «Volver a comprobar» y elige el modelo en el desplegable que aparecerá debajo.</li>
+      </ol>
+      <p><a href="https://www.aulafy.net/cursos/ia-local/ollama-desde-cero" target="_blank" rel="noopener">Guía ilustrada de Ollama en español</a></p>
+    </details>
+    <details class="tutor-guia" data-conexion hidden>
+      <summary>Conectar Ollama desde este sitio</summary>
+      <ol data-pasos-conexion></ol>
+      <p>Si tu navegador pide acceso a la red local, permítelo solo para el sitio de Plaza que estás usando.</p>
+    </details>
+    <button class="btn sm" type="button" data-comprobar>Volver a comprobar</button>
+    <div data-modelos hidden>
+      <p>${esc(q.enunciado)}</p><p><b>Respuesta correcta</b> · ${esc(op(q.opciones[res.correcta]))}</p>
+      <label>Modelo de tu ordenador<select required></select></label>
+      <label>Tu duda<textarea required maxlength="600">¿Por qué es correcta esta respuesta?</textarea></label>
+      <button class="btn primary" type="submit" disabled>Explicar con Ollama</button>
+      <div class="respuesta" aria-live="polite"></div>
+    </div></form>`);
   const form = d.querySelector('form'), modelo = form.querySelector('select');
-  const estado = form.querySelector('[role=status]'), boton = form.querySelector('button');
+  const estado = form.querySelector('[role=status]'), boton = form.querySelector('[type=submit]');
   const salida = form.querySelector('.respuesta'), control = new AbortController();
+  const guia = form.querySelector('details'), comprobar = form.querySelector('[data-comprobar]');
+  const campos = form.querySelector('[data-modelos]');
   d.addEventListener('close', () => control.abort(), {once:true});
   const ollama = window.Plaza.tutorLocal;
-  const info = await ollama.detectar();
-  if (control.signal.aborted) return;
-  const modelos = (info.modelos || []).filter(m => !m.nombre.endsWith(':cloud') && !m.nombre.endsWith('-cloud'));
-  if (!modelos.length) {
-    estado.textContent = 'Abre Ollama y descarga un modelo local (por ejemplo, ollama pull qwen3:1.7b). Después cierra y vuelve a abrir el tutor.';
-    return;
+  const conexion = form.querySelector('[data-conexion]');
+  const instrucciones = ollama.instrucciones();
+  if (!instrucciones.deSerie && !instrucciones.fichero) {
+    conexion.hidden = false;
+    for (const paso of instrucciones.pasos[instrucciones.so]) {
+      const item = document.createElement('li');
+      item.textContent = paso;
+      conexion.querySelector('ol').append(item);
+    }
   }
-  for (const m of modelos) modelo.add(new Option(m.nombre, m.nombre));
-  if (modelos.some(m => m.nombre === S.ui.ollamaModelo)) modelo.value = S.ui.ollamaModelo;
-  boton.disabled = false;
-  estado.textContent = 'La duda y el texto del artículo se envían a Ollama en este ordenador.';
+  form.querySelector('[data-copiar]').onclick = async event => {
+    try {
+      await navigator.clipboard.writeText('ollama pull qwen3:1.7b');
+      event.target.textContent = 'Copiado';
+    } catch {
+      estado.textContent = 'Selecciona el comando y cópialo en tu terminal.';
+    }
+  };
+  comprobar.onclick = async () => {
+    comprobar.disabled = boton.disabled = true;
+    estado.textContent = 'Buscando modelos en Ollama…';
+    try {
+      const info = await ollama.detectar(undefined, { alPreguntar: () => {
+        estado.textContent = 'Si el navegador pide acceso a la red local, permítelo para conectar con Ollama.';
+      }});
+      if (control.signal.aborted) return;
+      const modelos = (info.modelos || []).filter(m => !/(?:-|:)cloud$/i.test(m.nombre));
+      campos.hidden = !modelos.length;
+      if (!modelos.length) {
+        guia.open = true;
+        if (info.estado === 'ok') estado.textContent = 'Ollama está abierto. Descarga un modelo local en el paso 2.';
+        else if (info.permiso?.state === 'denied') estado.textContent = 'El navegador bloqueó el acceso a la red local. Autorízalo en los permisos del sitio y vuelve a comprobar.';
+        else if (info.estado === 'origen' && !conexion.hidden) {
+          estado.textContent = 'Ollama responde, pero el navegador no pudo leer la respuesta. Revisa la configuración de conexión de este sitio.';
+          conexion.open = true;
+        }
+        else estado.textContent = 'Plaza no pudo conectar con Ollama. Abre Ollama en este ordenador y vuelve a comprobar.';
+        return;
+      }
+      const elegido = modelo.value || S.ui.ollamaModelo;
+      modelo.replaceChildren(...modelos.map(m => new Option(m.nombre, m.nombre)));
+      if (modelos.some(m => m.nombre === elegido)) modelo.value = elegido;
+      guia.open = conexion.open = false;
+      boton.disabled = false;
+      estado.textContent = 'Ollama está listo. Elige un modelo y escribe tu duda.';
+    } catch {
+      if (control.signal.aborted) return;
+      campos.hidden = true;
+      guia.open = true;
+      estado.textContent = 'No se pudo comprobar Ollama. Vuelve a intentarlo.';
+    } finally {
+      comprobar.disabled = false;
+    }
+  };
   form.onsubmit = async e => {
     e.preventDefault();
     if (boton.disabled) return;
-    boton.disabled = true;
+    comprobar.disabled = boton.disabled = true;
     S.ui.ollamaModelo = modelo.value; save();
     estado.textContent = 'El modelo está preparando la explicación…'; salida.textContent = '';
     try {
@@ -268,8 +334,9 @@ async function abrirTutor(q, r, res, convocatoria = CONV_DE[q.banco] || '') {
         `Citas literales comprobadas: ${v.citas_ok} de ${v.citas}. Contrasta la explicación con el artículo.`;
     } catch (error) {
       if (!control.signal.aborted) estado.textContent = 'Ollama no pudo terminar. ' + error.message;
-    } finally { boton.disabled = false; }
+    } finally { comprobar.disabled = boton.disabled = false; }
   };
+  comprobar.click();
 }
 
 function reportar(id, r, conv = '') {
