@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Plaza · Oposiciones con la ley al día</title>
+<meta name="description" content="Tests, simulacros y casos prácticos generados desde el texto consolidado del BOE, con explicación y artículo literal.">
+<meta name="theme-color" content="#f5f4ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141c17" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="icono.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icono.svg">
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="seguimiento/vista.css">
+<script>/* tema antes de pintar, para que no parpadee */try{var t=JSON.parse(localStorage.getItem('plaza.v1')||'{}').tema||'light';if(t!=='auto')document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme='light'}</script>
+</head>
+<body>
+<div class="shell">
+  <aside class="side" aria-label="Navegación principal">
+    <a class="brand" href="#/inicio" aria-label="Plaza, inicio">
+      <span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="5"/><path d="M11.5 22.5v-13h5a4.25 4.25 0 0 1 0 8.5h-5"/><circle cx="21.6" cy="22.4" r="1.7"/></svg></span>
+      <span class="brand-t">Plaza<small>Oposiciones con la ley al día</small></span>
+    </a>
+    <button class="opo-switch" id="opoSwitch" type="button" aria-haspopup="dialog">
+      <span class="opo-k">Tu oposición</span>
+      <span class="opo-n" id="opoNombre">Elige oposición</span>
+      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Secciones de Plaza"></nav>
+    <div class="side-foot">
+      <button class="btn ghost sm tema-btn" id="tema" type="button"></button>
+      <div class="offline" id="offline" hidden><span class="dot"></span>Sin conexión · todo sigue disponible</div>
+      <p>Textos del BOE consolidado. Banco en revisión.</p>
+    </div>
+  </aside>
+  <header class="topbar">
+    <a class="brand" href="#/inicio" aria-label="Plaza, inicio"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="5"/><path d="M11.5 22.5v-13h5a4.25 4.25 0 0 1 0 8.5h-5"/><circle cx="21.6" cy="22.4" r="1.7"/></svg></span><span class="brand-t">Plaza</span></a>
+    <div class="top-r"><button class="icon-btn" id="temaM" type="button" aria-label="Cambiar tema"></button><a class="icon-btn" href="#/ayuda" aria-label="Ayuda"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.7 9.6a2.4 2.4 0 0 1 4.6.9c0 1.6-2.3 2-2.3 3.5"/><path d="M12 16.9h.01"/></svg></a>
+    <button class="chip-btn" id="opoSwitchM" type="button"><span id="opoNombreM">Oposición</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></button></div>
+  </header>
+  <main id="main" tabindex="-1"></main>
+  <nav class="tabbar" id="tabbar" aria-label="Navegación"></nav>
+</div>
+
+<dialog id="dlg" class="dlg"></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="iconos.js"></script>
+<script src="actualizar_datos.js"></script>
+<script src="api.js"></script>
+<script src="tutor-local/tutor_local.js"></script>
+<script src="app.js"></script>
+<script>if ('serviceWorker' in navigator && location.protocol !== 'file:') addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));</script>
+</body>
+</html>

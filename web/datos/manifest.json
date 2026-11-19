@@ -1,0 +1,246 @@
+{
+  "ficheros": {
+    "datos/bancos.json": {
+      "bytes": 11531623,
+      "sha256": "62dbb7fc7c950f20567a8ef9404161b03a24794f80325b6885255a8baa3f3f6c"
+    },
+    "datos/explicaciones.json": {
+      "bytes": 3319042,
+      "sha256": "6e774ca5a768ae59a183a73696c9a65d57525b8a0c3ef58c01a723e7609e7be9"
+    },
+    "datos/leyes/BOE-A-1882-6036.json": {
+      "bytes": 960385,
+      "sha256": "2aaa71b2d8588d92a2625fdbe5ffb194328de961a62e76f01d5c2c4b963de4f2"
+    },
+    "datos/leyes/BOE-A-1978-31229.json": {
+      "bytes": 139220,
+      "sha256": "dd3b48063b40e5a8a09f00b3a64a861efe2ac7a27054cfe828c91412c7681039"
+    },
+    "datos/leyes/BOE-A-1979-23709.json": {
+      "bytes": 118933,
+      "sha256": "b707f939d5b05ae4edc07a8b414682ce8d0bb80c05798661a314494f1aa5815e"
+    },
+    "datos/leyes/BOE-A-1982-11584.json": {
+      "bytes": 44146,
+      "sha256": "6ffa24e8cf69a1990c4f5f01ed65693dd5d9fe0c9d425edcb51d621db648479f"
+    },
+    "datos/leyes/BOE-A-1982-15031.json": {
+      "bytes": 74854,
+      "sha256": "af730b110ffda730a145cc9a7db3ea3b3e8cfaeb6e8955b397fe6132f0d6bba7"
+    },
+    "datos/leyes/BOE-A-1982-837.json": {
+      "bytes": 142499,
+      "sha256": "8458bff1e126fe30c53fd677b920d181944b7f30adc7bde80a001204397fbc89"
+    },
+    "datos/leyes/BOE-A-1985-12666.json": {
+      "bytes": 1119271,
+      "sha256": "86adc95db005b5086091c0628f847b74502493fbb15a75830e776f939236a1f7"
+    },
+    "datos/leyes/BOE-A-1985-151.json": {
+      "bytes": 42700,
+      "sha256": "3d22705153ada1df63c5733e94a3897dd7cdf8def943641737f18a96e27621dd"
+    },
+    "datos/leyes/BOE-A-1985-16660.json": {
+      "bytes": 41373,
+      "sha256": "d41c761455e788c40e5db10f9edb4654e59802f7ff5e0f8ffddc1f3629b932ef"
+    },
+    "datos/leyes/BOE-A-1985-5392.json": {
+      "bytes": 355239,
+      "sha256": "73506b47b02cc70cd1d62599b68aa750d90c2b8669a3f7815e77e7f84dfbe4b4"
+    },
+    "datos/leyes/BOE-A-1986-10499.json": {
+      "bytes": 166956,
+      "sha256": "36fd65dbebfbabf7c910ad712ffc75b620239086d0dacddaf4af51a13abda5c2"
+    },
+    "datos/leyes/BOE-A-1986-1216.json": {
+      "bytes": 35892,
+      "sha256": "369d51570f5d759a7ba24b56f71b5facb6c88baf23e2df2e72a2a485367970d8"
+    },
+    "datos/leyes/BOE-A-1986-17958.json": {
+      "bytes": 97732,
+      "sha256": "9980105608d55caa840df84af10e677e48a2d9487653057cf3334516cc2a9fdc"
+    },
+    "datos/leyes/BOE-A-1986-33252.json": {
+      "bytes": 241224,
+      "sha256": "9fb6fbd9b69f32652858e291012fcfa93aad41e17a66b8a6ae6f104c0c8bc460"
+    },
+    "datos/leyes/BOE-A-1986-9865.json": {
+      "bytes": 256974,
+      "sha256": "8f572824af2d12e60cc8e807455494441ecae0b16c3cca6e05444942ccb9ef56"
+    },
+    "datos/leyes/BOE-A-1987-9351.json": {
+      "bytes": 35218,
+      "sha256": "a6655ddb3b04857a85a5ba410d7188f7f78dcaf958cbceb7a8b7dc9db42abfbc"
+    },
+    "datos/leyes/BOE-A-1988-8678.json": {
+      "bytes": 162761,
+      "sha256": "42b619a7baf8b4405d77dce473554282f56baa95ad394e1c90f8927fdb7cfbdf"
+    },
+    "datos/leyes/BOE-A-1994-22255.json": {
+      "bytes": 62650,
+      "sha256": "03989978575a130bd73e23c6673d445920492ed277ae9b8c65777cb0f1b16b7b"
+    },
+    "datos/leyes/BOE-A-1995-12095.json": {
+      "bytes": 142372,
+      "sha256": "312ce0c9126bb1797f0793739a741c001d11a9b4605716f6f9dfece88ace888d"
+    },
+    "datos/leyes/BOE-A-1995-24292.json": {
+      "bytes": 158244,
+      "sha256": "723a7ec12499f3acc5fc11bd3e1fe094a0c467475a5dc3cd7cbcd28e91ed89f0"
+    },
+    "datos/leyes/BOE-A-1995-8729.json": {
+      "bytes": 110628,
+      "sha256": "4a1fa96b8cc65b08311d4e54e02c5b81da586bc07989881e1f96fb4c4e89a655"
+    },
+    "datos/leyes/BOE-A-1995-8730.json": {
+      "bytes": 46114,
+      "sha256": "d0ceab0fad2127e6c2ce3cad2cd739759a9d6589ee6682a7631d77c3fde1df84"
+    },
+    "datos/leyes/BOE-A-1996-750.json": {
+      "bytes": 114396,
+      "sha256": "bf8bb12ae448bd9bea33b09b7ba6d24a159da6391e2351966e5e4e54dcaa4aa1"
+    },
+    "datos/leyes/BOE-A-1997-25336.json": {
+      "bytes": 64619,
+      "sha256": "4f9f5f9f05b48b4cc2630971b8a551d833a08921360cbfb60bf20e9194a405e2"
+    },
+    "datos/leyes/BOE-A-1998-16718.json": {
+      "bytes": 307945,
+      "sha256": "b293a4aa4acb32c8081418b259e45e7de7ab644fd57c6cde859ce65b9e8ec758"
+    },
+    "datos/leyes/BOE-A-2000-12140.json": {
+      "bytes": 77569,
+      "sha256": "3b4e266bbbcbc22aaf5a9f9f32799cf6dee557107c3d8121f8cb0283d5a5754c"
+    },
+    "datos/leyes/BOE-A-2000-323.json": {
+      "bytes": 1646585,
+      "sha256": "da072f117eda68956693f7ac791484ba29f06f300b6deb96aa4015947bc4c131"
+    },
+    "datos/leyes/BOE-A-2002-10337.json": {
+      "bytes": 105108,
+      "sha256": "bd21b059b03ab91dd8a19f75b9a04490e68348f5b4b7a182f80cc2256204b2c9"
+    },
+    "datos/leyes/BOE-A-2002-22188.json": {
+      "bytes": 48836,
+      "sha256": "dffed2c9f003550764642a68f935147f49ee50d81d4f70ec19734f100a49da70"
+    },
+    "datos/leyes/BOE-A-2003-10715.json": {
+      "bytes": 177692,
+      "sha256": "eb5b45912226313261f9092e5d050f9a56750854494aedbb75f59b5fdd1189bf"
+    },
+    "datos/leyes/BOE-A-2003-15237.json": {
+      "bytes": 49754,
+      "sha256": "4c9a0c412f614e43f617888dfa265cbf45b7bf0dcea43f5fe47a0a98b2ca79da"
+    },
+    "datos/leyes/BOE-A-2003-20254.json": {
+      "bytes": 356261,
+      "sha256": "03a36702932ec5adf954d71dc75b154f2c912e3f0c77d65344989778fe551e74"
+    },
+    "datos/leyes/BOE-A-2003-20977.json": {
+      "bytes": 233150,
+      "sha256": "848bfeea7b265d57f3eded6dbd6c884ea4cb96e5d31613ef2e4194175c3a5c0d"
+    },
+    "datos/leyes/BOE-A-2003-21340.json": {
+      "bytes": 124541,
+      "sha256": "c976e791ffb5044139c1160c532be63ff6933253e7a8591ed31ff1debd6cc0d8"
+    },
+    "datos/leyes/BOE-A-2003-21614.json": {
+      "bytes": 432969,
+      "sha256": "5faeec1248b460e14ec1544c8443d6764e215b263e55ee46aa4c7763aa6b220a"
+    },
+    "datos/leyes/BOE-A-2003-23101.json": {
+      "bytes": 166432,
+      "sha256": "8e71adc9d41253b5f255cb9b2822ffdbca921c4174273b26efc1880dc55b2035"
+    },
+    "datos/leyes/BOE-A-2003-23186.json": {
+      "bytes": 768919,
+      "sha256": "f2668cdb205899fdb19020a7be22a0a3e3d64959439feca2ccfa734c208866d8"
+    },
+    "datos/leyes/BOE-A-2004-4214.json": {
+      "bytes": 458052,
+      "sha256": "ff5c15d61de6b0d879ecf010a83eacfa2c45d8272a0ed1a0fd899957f0bf49f9"
+    },
+    "datos/leyes/BOE-A-2005-21264.json": {
+      "bytes": 145104,
+      "sha256": "91201b0dedc5b12fd3bc1dfd9e8e351e9eec924643d6a438a0b11f0aac79c728"
+    },
+    "datos/leyes/BOE-A-2008-12529.json": {
+      "bytes": 86474,
+      "sha256": "4bae71d5ddd4284349e7765ca0acfbaa9de58782034763558aeb1dfacf8bafa4"
+    },
+    "datos/leyes/BOE-A-2011-12628.json": {
+      "bytes": 169491,
+      "sha256": "3126f73540f02229b3b3545dcc1d8a7fa85086321172ab75f51ecd9601eb13ef"
+    },
+    "datos/leyes/BOE-A-2011-15936.json": {
+      "bytes": 651933,
+      "sha256": "802e87c0a72512858eee18f4d077fd9f923c2390a89cd38dfc484f6a05cdf9ac"
+    },
+    "datos/leyes/BOE-A-2011-2493.json": {
+      "bytes": 128591,
+      "sha256": "9d25553ddd40bd036e8f26b57f49f16222d0847455ae8bfb1ba1e0ef05ec0efd"
+    },
+    "datos/leyes/BOE-A-2012-5730.json": {
+      "bytes": 120781,
+      "sha256": "59f9ab0115081eb659a64d9e76f6780ef5d3a2048e503429b936b46108ff3e14"
+    },
+    "datos/leyes/BOE-A-2013-12887.json": {
+      "bytes": 116094,
+      "sha256": "b9ebec91f8f39be44876b1af61e6af3e71718357b4487a6620e46d673a3458fa"
+    },
+    "datos/leyes/BOE-A-2015-10565.json": {
+      "bytes": 288767,
+      "sha256": "d863dbc07accf007663cf49018321ba1da39bf68265f648f7e542e5525e94c23"
+    },
+    "datos/leyes/BOE-A-2015-10566.json": {
+      "bytes": 526392,
+      "sha256": "f04a5332d0ee61ad2b2b765338a283e355a190651382d2722056ffe4af557763"
+    },
+    "datos/leyes/BOE-A-2015-11719.json": {
+      "bytes": 227149,
+      "sha256": "800b48c225f775529afefa9e22e9ae43831ff830de8af6ae34f3e02fb81a0541"
+    },
+    "datos/leyes/BOE-A-2015-184.json": {
+      "bytes": 152498,
+      "sha256": "a49ed0600aa755990814d8ded296034b62686246667539ea394a73bb7d181a5e"
+    },
+    "datos/leyes/BOE-A-2015-7391.json": {
+      "bytes": 529964,
+      "sha256": "f53d38b8ae2d37689b365f35e071565dabdc095e5a5676264b962279fe17373a"
+    },
+    "datos/leyes/BOE-A-2017-12902.json": {
+      "bytes": 1271056,
+      "sha256": "d610f3e3fb7d82fff5e68aacaef6eac481752339fdc2ca9cd8bd498489ca239d"
+    },
+    "datos/leyes/BOE-A-2018-3760.json": {
+      "bytes": 182167,
+      "sha256": "07bc9790e6cf2484efdc98123b1a98fc9afbee3c61bf913b544ef5d28f2b615c"
+    },
+    "datos/leyes/BOE-A-2025-76.json": {
+      "bytes": 865230,
+      "sha256": "22e24ad76e9f01e3924334da78ef437e2609fd27cf989a7c4c4462680d762b98"
+    },
+    "datos/leyes/BORM-s-2000-90008.json": {
+      "bytes": 189798,
+      "sha256": "98c1247c9738af677b07cbe9bf3bd7295f86bc6ca0061bc597154bda1c8acd76"
+    },
+    "datos/leyes/BORM-s-2001-90010.json": {
+      "bytes": 188486,
+      "sha256": "19e8c8771322ab05d0f17fd28e2bd55db7fd61119af67253626a7864f652ef45"
+    },
+    "datos/meta.json": {
+      "bytes": 25928,
+      "sha256": "363990b981afcf36509b230e8ad559b1a4041793e410825c1aaeba28beea3aac"
+    },
+    "datos/oposiciones.json": {
+      "bytes": 1042073,
+      "sha256": "374fad1bbe5b5ecabee1605a68b0f5ee11c3096b50275568b75742000f03fb18"
+    },
+    "datos/versiones.json": {
+      "bytes": 153239,
+      "sha256": "e2828c0cf8c7370b8db7f68b365ebe13904d6338dff3be107659d605faba04a6"
+    }
+  },
+  "generado": "2026-11-19T20:00:25.710508+00:00",
+  "version": "aeeb2aa5ec4e"
+}

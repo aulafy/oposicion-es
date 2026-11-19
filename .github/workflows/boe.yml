@@ -1,0 +1,33 @@
+name: Revisar convocatorias y normas del BOE
+on:
+  schedule:
+    - cron: '45 12 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mantenimiento-boe
+  cancel-in-progress: false
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Revisar convocatorias y generar el catálogo público
+        run: |
+          python3 mantenimiento/oposiciones.py
+          cp mantenimiento/oposiciones/oposiciones.json web/datos/oposiciones.json
+          python3 mantenimiento/manifiesto.py
+          python3 mantenimiento/comprobar.py
+      - name: Publicar el catálogo
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add mantenimiento/oposiciones/{estado.json,anuncios.jsonl,detalles.json} web/datos/{oposiciones.json,manifest.json}
+          if ! git diff --cached --quiet; then git commit -m 'Actualizar convocatorias del BOE' && git push; fi
+      - name: Detectar normas que requieren revisión editorial
+        run: |
+          python3 mantenimiento/vigilar_leyes.py >> "$GITHUB_STEP_SUMMARY"
+          git add mantenimiento/revision-leyes.json
+          if ! git diff --cached --quiet; then git commit -m 'Registrar novedades del BOE para revisión' && git push; fi

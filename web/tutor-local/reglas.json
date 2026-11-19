@@ -1,0 +1,698 @@
+{
+ "BOE-A-1882-6036": {
+  "dias": null,
+  "propia": false,
+  "cita": "art. 201 LECrim y LOPJ",
+  "fuente": "art. 201 LECrim y LOPJ",
+  "nota": "En la instrucción todos los días son hábiles (art. 201); en el resto, LOPJ arts. 182 a 185. Depende de la fase.",
+  "frases": [
+   {
+    "norma": "BOE-A-1882-6036",
+    "bloque": "a201",
+    "frase": "Todos los días y horas del año serán hábiles para la instrucción de las causas criminales, sin necesidad de habilitación especial.",
+    "huella": "6887186496cabbb1"
+   }
+  ]
+ },
+ "BOE-A-1978-31229": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-1979-23709": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "LOPJ y LEC supletorias (art. 80 LOTC)",
+  "fuente": "LOPJ y LEC supletorias (art. 80 LOTC)",
+  "nota": "",
+  "frases": [
+   {
+    "norma": "BOE-A-1979-23709",
+    "bloque": "aochenta",
+    "frase": "Se aplicarán, con carácter supletorio de la presente Ley, los preceptos de la Ley Orgánica del Poder Judicial y de la Ley de Enjuiciamiento Civil",
+    "huella": "9feb932c27f0da51"
+   }
+  ]
+ },
+ "BOE-A-1982-11584": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-1982-15031": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-1982-837": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-1985-12666": {
+  "dias": "hábiles",
+  "propia": true,
+  "cita": "arts. 182 y 185 de la LOPJ",
+  "fuente": "arts. 182 y 185 de la LOPJ",
+  "nota": "Agosto y del 24 de diciembre al 6 de enero, inhábiles salvo urgencia (art. 183); en la instrucción penal todos los días son hábiles (art. 184).",
+  "frases": [
+   {
+    "norma": "BOE-A-1985-12666",
+    "bloque": "acientoochentaydos",
+    "frase": "Son inhábiles a efectos procesales los sábados y domingos, los días de fiesta nacional y los festivos a efectos laborales en la respectiva Comunidad Autónoma o localidad.",
+    "huella": "6f37d8b291f8176e"
+   },
+   {
+    "norma": "BOE-A-1985-12666",
+    "bloque": "acientoochentaycinco",
+    "frase": "Los plazos procesales se computarán con arreglo a lo dispuesto en el Código Civil.",
+    "huella": "0c2b59d551ecdea6"
+   }
+  ]
+ },
+ "BOE-A-1985-151": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-1985-16660": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-1985-5392": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-1986-10499": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-1986-1216": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-1986-17958": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-1986-33252": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-1986-9865": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-1987-9351": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-1988-8678": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-1994-22255": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-1995-12095": {
+  "dias": null,
+  "propia": false,
+  "cita": "LECrim supletoria (art. 24.2 LOTJ)",
+  "fuente": "LECrim supletoria (art. 24.2 LOTJ)",
+  "nota": "Depende de la fase, como en la LECrim.",
+  "frases": [
+   {
+    "norma": "BOE-A-1995-12095",
+    "bloque": "a24",
+    "frase": "La aplicación de la Ley de Enjuiciamiento Criminal será supletoria en lo que no se oponga a los preceptos de la presente Ley.",
+    "huella": "4ca621e7bd271c57"
+   }
+  ]
+ },
+ "BOE-A-1995-24292": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-1995-8729": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-1995-8730": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-1996-750": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-1997-25336": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-1998-16718": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "LEC supletoria (disp. final 1.ª LJCA)",
+  "fuente": "LEC supletoria (disp. final 1.ª LJCA)",
+  "nota": "En agosto no corre ningún plazo de esta ley, salvo en derechos fundamentales (art. 128.2).",
+  "frases": [
+   {
+    "norma": "BOE-A-1998-16718",
+    "bloque": "dfprimera",
+    "frase": "En lo no previsto por esta Ley, regirá como supletoria la de Enjuiciamiento Civil.",
+    "huella": "57253059c23a1f94"
+   },
+   {
+    "norma": "BOE-A-1998-16718",
+    "bloque": "a128",
+    "frase": "Durante el mes de agosto no correrá el plazo para interponer el recurso contencioso-administrativo ni ningún otro plazo de los previstos en esta Ley",
+    "huella": "b482d5f64eb51724"
+   }
+  ]
+ },
+ "BOE-A-2000-12140": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-2000-323": {
+  "dias": "hábiles",
+  "propia": true,
+  "cita": "art. 133.2 de la LEC",
+  "fuente": "art. 133.2 de la LEC",
+  "nota": "Agosto y del 24 de diciembre al 6 de enero son inhábiles (art. 130); meses y años, de fecha a fecha (art. 133.3).",
+  "frases": [
+   {
+    "norma": "BOE-A-2000-323",
+    "bloque": "a133",
+    "frase": "En el cómputo de los plazos señalados por días se excluirán los inhábiles.",
+    "huella": "f4fab8f2433275fd"
+   },
+   {
+    "norma": "BOE-A-2000-323",
+    "bloque": "a130",
+    "frase": "También serán inhábiles los días del mes de agosto.",
+    "huella": "e0eff95c4bf05ca5"
+   }
+  ]
+ },
+ "BOE-A-2002-10337": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-2002-22188": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-2003-10715": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-2003-15237": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-2003-20254": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-2003-20977": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-2003-21340": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-2003-21614": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-2003-23101": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-2003-23186": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-2004-4214": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-2005-21264": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-2008-12529": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-2011-12628": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-2011-15936": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "LEC supletoria (disp. final 4.ª LJS)",
+  "fuente": "LEC supletoria (disp. final 4.ª LJS)",
+  "nota": "Agosto y del 24 de diciembre al 6 de enero son inhábiles salvo en las modalidades del art. 43.4.",
+  "frases": [
+   {
+    "norma": "BOE-A-2011-15936",
+    "bloque": "dfcuarta",
+    "frase": "En lo no previsto en esta Ley regirá como supletoria la Ley de Enjuiciamiento Civil",
+    "huella": "b3677a80fb560209"
+   }
+  ]
+ },
+ "BOE-A-2011-2493": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-2012-5730": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BOE-A-2013-12887": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-2015-10565": {
+  "dias": "hábiles",
+  "propia": true,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015",
+  "nota": "Las horas también son hábiles (art. 30.1); meses y años, de fecha a fecha (art. 30.4).",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-2015-10566": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-2015-11719": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-2015-184": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-2015-7391": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "LEC supletoria (art. 8 LJV)",
+  "fuente": "LEC supletoria (art. 8 LJV)",
+  "nota": "",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-7391",
+    "bloque": "a8",
+    "frase": "Las disposiciones de la Ley de Enjuiciamiento Civil serán de aplicación supletoria a los expedientes de jurisdicción voluntaria en todo lo no regulado por la presente Ley.",
+    "huella": "7bf9f5303175033d"
+   }
+  ]
+ },
+ "BOE-A-2017-12902": {
+  "dias": "naturales",
+  "propia": true,
+  "cita": "disp. adicional 12.ª de la Ley 9/2017",
+  "fuente": "disp. adicional 12.ª de la Ley 9/2017",
+  "nota": "Si el último día es inhábil, se prorroga al primer día hábil siguiente.",
+  "frases": [
+   {
+    "norma": "BOE-A-2017-12902",
+    "bloque": "da-12",
+    "frase": "Los plazos establecidos por días en esta Ley se entenderán referidos a días naturales, salvo que en la misma se indique expresamente que solo deben computarse los días hábiles.",
+    "huella": "ebaf0879b88988b6"
+   }
+  ]
+ },
+ "BOE-A-2018-3760": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BOE-A-2025-76": {
+  "dias": null,
+  "propia": false,
+  "cita": "",
+  "fuente": "",
+  "nota": "Sin regla de cómputo comprobada para esta norma.",
+  "frases": []
+ },
+ "BORM-s-2000-90008": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ },
+ "BORM-s-2001-90010": {
+  "dias": "hábiles",
+  "propia": false,
+  "cita": "art. 30.2 de la Ley 39/2015",
+  "fuente": "art. 30.2 de la Ley 39/2015, si es un plazo de procedimiento administrativo",
+  "nota": "Esta norma no fija su propio cómputo.",
+  "frases": [
+   {
+    "norma": "BOE-A-2015-10565",
+    "bloque": "a30",
+    "frase": "Siempre que por Ley o en el Derecho de la Unión Europea no se exprese otro cómputo, cuando los plazos se señalen por días, se entiende que éstos son hábiles, excluyéndose del cómputo los sábados, los domingos y los declarados festivos.",
+    "huella": "ff12a082f88bb3c3"
+   }
+  ]
+ }
+}

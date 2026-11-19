@@ -1,0 +1,166 @@
+/* Oposiciones (seguimiento). Todo va bajo .op y usa las variables de la app (app/app.css), así que hereda el tema claro u oscuro.
+   --op-top: altura de la barra fija de la app, para que los filtros pegajosos no queden debajo (0 en la página autónoma). */
+.op{--op-top:0px;--op-r:var(--r-lg,8px);max-width:980px;margin:0 auto;color:var(--ink);-webkit-tap-highlight-color:transparent}
+.op-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.op :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Cabecera */
+.op-head h2{font-family:var(--display,Georgia,serif);font-weight:400;font-size:clamp(36px,4vw + 7px,58px);line-height:1.1;margin:0 0 6px;letter-spacing:-.015em;text-wrap:balance}
+.op-mut{color:var(--ink-3);font-size:14px;margin:0}
+.op-cifras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px}
+.op-cifras>*{display:grid;gap:2px;text-align:left;padding:12px 14px;border-radius:var(--op-r);background:var(--surface);border:1px solid var(--line);font:inherit;color:inherit}
+.op-cifras b{font-size:24px;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums;line-height:1.1}
+.op-cifras span{font-size:13px;color:var(--ink-2)}
+.op-cifras button{cursor:pointer;transition:border-color .15s,background .15s}
+.op-cifras button:hover{border-color:var(--accent)}
+.op-cifras button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}.op-cifras button[aria-pressed=true] span{color:inherit;opacity:.85}
+
+/* Pestañas */
+.op-tabs{display:flex;gap:2px;margin:20px 0 0;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.op-tabs::-webkit-scrollbar{display:none}
+.op-tabs button{flex:none;border:0;background:none;padding:12px 14px;font:inherit;font-weight:650;font-size:15px;color:var(--ink-2);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;min-height:46px}
+.op-tabs button:hover{color:var(--ink)}
+.op-tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--accent)}
+.op-tabs span{font-size:12px;font-weight:650;padding:1px 8px;border-radius:999px;background:var(--surface-2);color:var(--ink-2);margin-left:4px}
+.op-tabs span.nuevas{background:var(--accent);color:var(--on-accent)}
+.op-intro{font-size:15px;color:var(--ink-2);margin:16px 0 0;max-width:70ch;line-height:1.55}
+
+/* Filtros: buscador y categorías fijos arriba al desplazarse */
+.op-filtros{position:sticky;top:var(--op-top);z-index:3;display:grid;gap:10px;padding:14px 0 10px;background:var(--bg);box-shadow:0 1px 0 var(--line)}
+.op-q{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line-2);border-radius:var(--op-r);padding:0 16px;min-height:50px;transition:border-color .15s,box-shadow .15s}
+.op-q:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.op-q svg{width:19px;height:19px;fill:none;stroke:var(--ink-3);stroke-width:2;flex:none}
+.op-q input{flex:1;min-width:0;border:0;background:none;font:inherit;font-size:16px;color:var(--ink);outline:0}
+.op-q input::placeholder{color:var(--ink-3)}
+.op-cats{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px 2px;scroll-padding:16px}
+.op-cats::-webkit-scrollbar{display:none}
+.op-cats button{flex:none;border:1px solid var(--line-2);background:var(--surface);color:var(--ink-2);border-radius:999px;padding:0 15px;min-height:38px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.op-cats button:hover{border-color:var(--ink-3);color:var(--ink)}
+.op-cats button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.op-mas-filtros{display:none}
+.op-sel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.op-sel.dos{grid-template-columns:repeat(2,minmax(0,1fr))}
+.op-sel select{width:100%;min-height:44px;border-radius:12px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);font:inherit;font-size:14.5px;padding:0 12px;cursor:pointer}
+.op-activos{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.op-activos button{display:inline-flex;align-items:center;gap:6px;border:0;border-radius:999px;padding:0 12px;min-height:32px;background:var(--accent-soft);color:var(--accent);font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.op-activos button span[aria-hidden]{font-size:16px;line-height:1}
+.op-activos .op-borrar{background:none;color:var(--ink-2);text-decoration:underline;text-underline-offset:3px}
+.op-resumen{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin:14px 0 10px;font-size:14px;color:var(--ink-2)}
+.op-orden{display:flex;gap:2px;background:var(--surface-2);padding:3px;border-radius:999px}
+.op-orden button{border:0;background:none;padding:0 12px;min-height:32px;border-radius:999px;font:inherit;font-size:13px;font-weight:600;color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.op-orden button[aria-pressed=true]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.14)}
+.op-link{display:inline-flex;align-items:center;gap:6px;margin:0 0 12px;border:0;background:none;padding:6px 0;font:inherit;font-size:14px;font-weight:650;color:var(--accent);cursor:pointer}
+.op-link:disabled{color:var(--ok);cursor:default}
+
+/* Fila: plazas · puesto / organismo / datos · estado */
+.op-row{scroll-margin-top:calc(var(--op-top) + 210px);background:var(--surface);border:1px solid var(--line);border-radius:var(--op-r);margin-bottom:8px;transition:border-color .15s,box-shadow .15s}
+.op-row:hover{border-color:var(--line-2);box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.op-row.abierta{border-color:var(--accent);box-shadow:0 6px 24px rgba(0,0,0,.08)}
+.op-linea{display:grid;grid-template-columns:64px minmax(0,1fr) auto 20px;align-items:center;gap:16px;width:100%;padding:14px 16px;border:0;background:none;font:inherit;color:inherit;text-align:left;cursor:pointer;border-radius:var(--op-r)}
+.op-linea.fija{grid-template-columns:64px minmax(0,1fr) auto;cursor:default}
+.op-plazas{display:grid;justify-items:center;align-content:center;width:64px;min-height:56px;border-radius:12px;background:var(--accent-soft);color:var(--accent);line-height:1}
+.op-plazas b{font-size:22px;font-weight:750;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.op-plazas small{font-size:11.5px;font-weight:600;margin-top:3px;opacity:.85}
+.op-ico{display:grid;place-items:center;width:64px;min-height:56px;border-radius:12px;background:var(--surface-2)}
+.op-ico svg{width:22px;height:22px;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.op-ico.administracion svg{stroke:var(--accent)}.op-ico.sanidad svg{stroke:var(--bad)}.op-ico.seguridad svg{stroke:var(--ink-2)}.op-ico.educacion svg{stroke:var(--warn)}.op-ico.otros svg{stroke:var(--ink-3)}
+.op-txt{display:grid;gap:3px;min-width:0}
+.op-nombre{font-weight:650;font-size:16px;line-height:1.3;overflow-wrap:anywhere}
+.op-linea:hover .op-nombre{color:var(--accent)}
+.op-org{color:var(--ink-2);font-size:14px;line-height:1.35}
+.op-meta{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:3px;font-size:13px;color:var(--ink-3)}
+.op-meta span+span::before{content:'';display:inline-block;width:3px;height:3px;border-radius:50%;background:currentColor;vertical-align:middle;margin:-2px 9px 0 -6px;opacity:.7}
+.op-nueva{display:inline-block;vertical-align:2px;margin-left:4px;font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px;background:var(--accent);color:var(--on-accent)}
+.op-estado{display:grid;justify-items:end;gap:5px;text-align:right}
+.op-pill{display:inline-block;padding:0 14px;min-height:30px;line-height:30px;border-radius:999px;font-size:13.5px;font-weight:700;white-space:nowrap;background:var(--ok);color:#fff}
+.op-pill.urg{background:var(--bad)}.op-pill.gris{background:var(--surface-2);color:var(--ink-2)}.op-pill.pend{background:var(--warn);color:#fff}
+.op-hasta{font-size:13px;color:var(--ink-2);text-decoration:none;white-space:nowrap}a.op-hasta{color:var(--ink-3)}a.op-hasta:hover{color:var(--accent);text-decoration:underline}
+.op-chev{width:20px;height:20px;fill:none;stroke:var(--ink-3);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.op-row.abierta .op-chev{transform:rotate(180deg)}
+.op-resumen .op-pill,.op-aviso .op-pill{min-height:24px;line-height:24px;padding:0 10px;font-size:12px}
+
+/* Ficha */
+.op-ficha{padding:2px 16px 18px 96px;animation:op-abrir .2s ease-out}
+@keyframes op-abrir{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.op-barra{max-width:640px;padding:12px 14px;border-radius:12px;background:var(--surface-2);margin-bottom:12px}
+.op-barra-t{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px 12px;font-size:14px}
+.op-barra-t b{color:var(--ok)}.op-barra.pronto .op-barra-t b{color:var(--warn)}.op-barra.urg .op-barra-t b{color:var(--bad)}
+.op-barra-t span{color:var(--ink-2);font-size:13px}
+.op-barra-b{height:6px;border-radius:4px;background:var(--line);overflow:hidden;margin-top:8px}
+.op-barra-b i{display:block;height:100%;border-radius:4px;background:var(--ok)}.op-barra.pronto .op-barra-b i{background:var(--warn)}.op-barra.urg .op-barra-b i{background:var(--bad)}
+.op-datos{width:100%;max-width:640px;border-collapse:collapse;font-size:14.5px}
+.op-datos th{width:170px;text-align:left;font-weight:600;color:var(--ink-2);padding:10px 12px 10px 0;vertical-align:top;border-top:1px solid var(--line)}
+.op-datos td{padding:10px 0;border-top:1px solid var(--line);overflow-wrap:anywhere}
+.op-datos tr:first-child th,.op-datos tr:first-child td{border-top:0}
+.op-datos small{display:block;color:var(--ink-3);font-size:12.5px;margin-top:3px;line-height:1.45}
+.op-sub{font-size:13px;font-weight:650;color:var(--ink-2);margin:16px 0 6px}
+.op-novs{max-width:640px}
+.op-novs a{display:flex;gap:12px;padding:8px 0;font-size:14px;color:var(--ink);text-decoration:none;border-top:1px solid var(--line)}.op-novs a span{color:var(--ink-3);min-width:50px}
+.op-novs a:hover{color:var(--accent)}
+.op-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.op-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);font:inherit;font-weight:650;font-size:14.5px;text-decoration:none;cursor:pointer;transition:background .15s,border-color .15s,transform .1s}
+.op-btn:active{transform:scale(.98)}
+.op-btn.on{background:var(--ok);border-color:var(--ok)}
+.op-btn.ghost{background:var(--surface);color:var(--accent);border-color:var(--line-2)}.op-btn.ghost:hover{border-color:var(--accent);background:var(--accent-soft)}
+.op-cerrar{margin-left:auto}
+.op-plaza{display:flex;align-items:center;gap:8px;max-width:640px;margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--accent-soft);color:var(--ink);text-decoration:none;font-size:14.5px}
+.op-plaza b{color:var(--accent)}
+.op-pag{display:grid;justify-items:center;gap:8px;margin-top:14px;font-size:13px;color:var(--ink-3)}
+.op-mas{min-width:220px}
+.op-vacio{padding:32px 18px;text-align:center;color:var(--ink-2);background:var(--surface);border:1px dashed var(--line-2);border-radius:var(--op-r);line-height:1.6}
+.op-bloque{margin:18px 0 26px}.op-bloque h3{font-size:17px;margin:0 0 10px}
+.op-avisos{list-style:none;margin:0;padding:0;display:grid;gap:6px}.op-avisos li{display:flex;gap:6px}
+.op-aviso{flex:1;display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;padding:0 16px;min-height:52px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font:inherit;font-size:15px;color:inherit;cursor:pointer}
+.op-aviso:hover{border-color:var(--accent)}
+.op-x{border:1px solid var(--line);background:var(--surface);border-radius:12px;width:52px;font-size:22px;color:var(--ink-3);cursor:pointer}
+.op-x:hover{color:var(--bad);border-color:var(--bad)}
+.op-pie{font-size:12.5px;color:var(--ink-3);margin:24px 0 0;max-width:80ch;line-height:1.5}
+
+/* Dentro de la app (.shell): por debajo de 860 px la app muestra su barra superior fija (app.css), y los filtros se pegan debajo de ella */
+@media (max-width:860px){.shell .op{--op-top:calc(65px + env(safe-area-inset-top))}}
+/* Tableta */
+@media (max-width:900px){
+  .op-ficha{padding-left:16px}
+}
+/* Móvil */
+@media (max-width:640px){
+  .op-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;overflow:visible}
+  .op-tabs button{padding-inline:8px;text-align:left;font-size:13px;white-space:normal}
+  .op-tabs span{padding-inline:6px;white-space:nowrap}
+  .op-cifras{gap:6px}.op-cifras>*{padding:10px 10px}.op-cifras b{font-size:19px}.op-cifras span{font-size:12px;line-height:1.25}
+  .op-filtros{padding-top:10px}
+  .op-cats .op-mas-filtros{display:inline-flex;align-items:center;gap:6px;color:var(--ink)}
+  .op-cats .op-mas-filtros[aria-expanded=true]{border-color:var(--accent);color:var(--accent)}
+  .op-mas-filtros svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+  .op-mas-filtros span{background:var(--accent);color:var(--on-accent);border-radius:999px;font-size:11.5px;padding:0 7px;line-height:18px}
+  .op-sel,.op-sel.dos{display:none;grid-template-columns:minmax(0,1fr)}.op-sel.visible{display:grid}
+  .op-resumen{margin-top:12px}.op-orden{width:100%}.op-orden button{flex:1;padding:0 6px}
+  .op-linea,.op-linea.fija{grid-template-columns:52px minmax(0,1fr) 18px;gap:6px 12px;padding:14px 12px 14px 14px;align-items:start}
+  .op-linea.fija{grid-template-columns:52px minmax(0,1fr)}
+  .op-plazas,.op-ico{width:52px;min-height:50px}.op-plazas b{font-size:19px}
+  .op-nombre{font-size:15.5px}
+  .op-estado{grid-column:2;grid-row:2;display:flex;align-items:center;justify-content:flex-start;gap:10px;flex-wrap:wrap;text-align:left}
+  .op-chev{grid-column:3;grid-row:1;margin-top:2px}
+  .op-pill{min-height:28px;line-height:28px;padding:0 12px;font-size:13px}
+  .op-ficha{padding:0 14px 16px}
+  .op-datos{font-size:14px}.op-datos th{width:112px}
+  .op-btns{display:grid;grid-template-columns:minmax(0,1fr)}.op-btn{width:100%}.op-cerrar{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){.op *{animation:none!important;transition:none!important}}
+
+/* Índice de convocatorias y fichas del boletín */
+.op-head{border-top:3px solid var(--accent);padding-top:14px}
+.op-cifras{border-block:1px solid var(--line-2);gap:0}
+.op-cifras>*{border:0;border-radius:0;background:transparent}
+.op-cifras>*+*{border-left:1px solid var(--line-2)}
+.op-cifras b,.op-plazas b{font:400 clamp(24px,3vw,38px)/1 var(--display,Georgia,serif)}
+.op-cifras button:hover{background:var(--accent-soft);color:var(--ink)}
+.op-q{border:0;border-bottom:2px solid var(--accent);border-radius:0;padding-inline:10px}
+.op-cats button,.op-sel select,.op-btn,.op-activos button{border-radius:2px}
+.op-orden,.op-orden button{border-radius:0;background:none}
+.op-orden button[aria-pressed=true]{box-shadow:inset 0 -2px var(--accent);background:none}
+.op-row,.op-row:hover,.op-row.abierta{margin:0;border:0;border-top:1px solid var(--line-2);border-radius:0;background:transparent;box-shadow:none}
+.op-row.abierta{background:var(--surface)}
+.op-linea{border-radius:0;padding-block:18px}
+.op-plazas,.op-ico{border-radius:0;background:none;border-right:1px solid var(--line-2)}
+.op-pill{border-radius:2px}
+.op-barra,.op-plaza{border-radius:0;border-left:3px solid var(--accent)}
