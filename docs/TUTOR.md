@@ -2,6 +2,33 @@
 
 Ollama ejecuta un modelo de IA en tu ordenador para ayudarte a entender la corrección de una pregunta. Instálalo si quieres usar el botón **Preguntar**. Puedes hacer tests y leer las explicaciones incluidas desde que abres Plaza.
 
+## Configuración paso a paso con capturas
+
+### Abre el tutor desde una corrección
+
+Instala y abre Ollama siguiendo los pasos de tu sistema que aparecen [más abajo](#1-instala-ollama). En Plaza, responde una pregunta y pulsa **Preguntar** al pie de la corrección.
+
+![Corrección de Plaza con el botón Preguntar al final del fundamento](capturas/tutor/preguntar.jpg)
+
+### Descarga el modelo y vuelve a comprobar
+
+Si el tutor aún no detecta un modelo, se abrirá la guía de configuración. En **Terminal** (macOS o Linux) o **PowerShell** (Windows), ejecuta el comando del recuadro. Si ya tienes un modelo local instalado, puedes pasar directamente a **Volver a comprobar**.
+
+```text
+ollama pull qwen3:1.7b
+ollama list
+```
+
+Ejecuta `ollama list` cuando termine la descarga y comprueba que aparece `qwen3:1.7b`. Regresa a Plaza y pulsa **Volver a comprobar** en el mismo cuadro.
+
+![Guía de configuración de Plaza con el comando para copiar y el botón Volver a comprobar](capturas/tutor/configuracion.jpg)
+
+### Elige un modelo y pide una explicación
+
+En **Modelo de tu ordenador**, selecciona el que acabas de descargar o uno que ya tuvieras instalado. Escribe tu duda y pulsa **Explicar con Ollama**. La captura muestra una prueba con `qwen2.5:3b`. Lee la respuesta junto al artículo que aparece en la corrección.
+
+![Tutor de Plaza con un modelo local seleccionado y una explicación generada](capturas/tutor/modelo-y-respuesta.jpg)
+
 ## 1. Instala Ollama
 
 - **macOS.** Descarga la aplicación, muévela a Aplicaciones si el instalador te lo pide y ábrela. Consulta los requisitos de tu versión de macOS. [Guía oficial para macOS](https://docs.ollama.com/macos)
@@ -38,4 +65,4 @@ Los modelos más pequeños sirven para empezar y pueden dar explicaciones más l
 3. Selecciona el modelo que descargaste. Prueba con «¿Qué parte del artículo descarta mi respuesta?» y pulsa **Explicar con Ollama**. La primera respuesta puede tardar mientras el modelo se carga.
 4. Lee la explicación junto al artículo. Una cita literal puede ser correcta aunque la interpretación sea equivocada.
 
-Si el selector aparece vacío, comprueba que Ollama está abierto y que `ollama list` muestra el modelo. Cierra y vuelve a abrir el tutor. [Ayuda de Plaza](AYUDA.md) · [Solución de problemas en Aulafy.net](https://www.aulafy.net/cursos/ia-local/troubleshooting-ollama)
+Si el selector aparece vacío, comprueba que Ollama está abierto y que `ollama list` muestra el modelo. Pulsa **Volver a comprobar** en el mismo cuadro. [Ayuda de Plaza](AYUDA.md) · [Solución de problemas en Aulafy.net](https://www.aulafy.net/cursos/ia-local/troubleshooting-ollama)
