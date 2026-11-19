@@ -87,15 +87,14 @@
     }
   }
   /** ¿El modelo razona (gpt-oss, qwen3, deepseek-r1…)? Para pedirle razonamiento en nivel bajo, como el servidor. */
-  const capacidades = {};
   async function razona(base, modelo) {
-    if (!(modelo in capacidades)) {
-      try {
-        const r = await fetch(base + '/api/show', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ model: modelo }) });
-        capacidades[modelo] = ((await r.json()).capabilities || []).includes('thinking');
-      } catch (e) { capacidades[modelo] = /gpt-oss/.test(modelo); }
+    const respuesta = await fetch(base + '/api/show', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ model: modelo }) });
+    if (!respuesta.ok) throw new Error('No se pudo consultar el modelo instalado.');
+    const ficha = await respuesta.json();
+    if (ficha.remote_model || ficha.remote_host || /(?:-|:)cloud$/i.test(modelo)) {
+      throw new Error('Selecciona un modelo descargado que se ejecute en tu ordenador.');
     }
-    return capacidades[modelo];
+    return (ficha.capabilities || []).includes('thinking');
   }
 
   /* ---------- duda ---------- */
