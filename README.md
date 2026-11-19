@@ -6,6 +6,12 @@ Plaza es un proyecto abierto de [Aulafy.net](https://www.aulafy.net/). Puedes pr
 
 Puedes usar Plaza como portada de un sitio WordPress mediante el tema incluido en el repositorio. [Instalación en WordPress](docs/WORDPRESS.md)
 
+## Así se usa Plaza
+
+[![Vista de Inicio de Plaza con el plan diario y el botón Test rápido](docs/capturas/inicio.jpg)](docs/PANTALLAS.md)
+
+[Ver las siete pantallas explicadas](docs/PANTALLAS.md) · [Descargar la guía rápida en PDF](docs/Plaza-Guia-rapida.pdf)
+
 ## Qué puedes hacer
 
 | Si quieres… | Abre… |
