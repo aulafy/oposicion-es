@@ -4,30 +4,31 @@ Ollama ejecuta un modelo de IA en tu ordenador para ayudarte a entender la corre
 
 ## Configuración paso a paso con capturas
 
-### Abre el tutor desde una corrección
+### Configura el tutor una vez
 
-Instala y abre Ollama siguiendo los pasos de tu sistema que aparecen [más abajo](#1-instala-ollama). En Plaza, responde una pregunta y pulsa **Preguntar** al pie de la corrección.
+Instala Ollama siguiendo [los pasos de tu sistema](#1-instala-ollama). En Plaza, pulsa **Configurar Ollama** debajo del menú lateral. En una pantalla estrecha, usa el icono de configuración de la barra superior.
 
-![Corrección de Plaza con el botón Preguntar al final del fundamento](capturas/tutor/preguntar.jpg)
-
-### Descarga el modelo y vuelve a comprobar
-
-Si el tutor aún no detecta un modelo, se abrirá la guía de configuración. En **Terminal** (macOS o Linux) o **PowerShell** (Windows), ejecuta el comando del recuadro. Si ya tienes un modelo local instalado, puedes pasar directamente a **Volver a comprobar**.
+Si aún necesitas un modelo, abre Terminal (macOS o Linux) o PowerShell (Windows) y ejecuta:
 
 ```text
 ollama pull qwen3:1.7b
-ollama list
 ```
 
-Ejecuta `ollama list` cuando termine la descarga y comprueba que aparece `qwen3:1.7b`. Regresa a Plaza y pulsa **Volver a comprobar** en el mismo cuadro.
+Cuando termine, vuelve a Plaza, pulsa **Volver a comprobar**, elige el modelo y selecciona **Guardar y cerrar**.
 
-![Guía de configuración de Plaza con el comando para copiar y el botón Volver a comprobar](capturas/tutor/configuracion.jpg)
+![Configuración de Ollama en Plaza con el comando de descarga y el botón Volver a comprobar](capturas/tutor/configuracion.jpg)
 
-### Elige un modelo y pide una explicación
+### Pregunta desde una corrección
 
-En **Modelo de tu ordenador**, selecciona el que acabas de descargar o uno que ya tuvieras instalado. Escribe tu duda y pulsa **Explicar con Ollama**. La captura muestra una prueba con `qwen2.5:3b`. Lee la respuesta junto al artículo que aparece en la corrección.
+Responde una pregunta y pulsa **Preguntar** al pie del fundamento.
 
-![Tutor de Plaza con un modelo local seleccionado y una explicación generada](capturas/tutor/modelo-y-respuesta.jpg)
+![Corrección de Plaza con el botón Preguntar al final del fundamento](capturas/tutor/preguntar.jpg)
+
+### Habla con el tutor
+
+Usa una de las sugerencias para entender tu error, pedir un ejemplo o buscar un truco para recordar la respuesta. También puedes escribir tu propia duda y hacer una pregunta de seguimiento. Plaza usa el modelo que guardaste en la configuración.
+
+![Panel del Tutor de Plaza con una pregunta y una explicación generada](capturas/tutor/modelo-y-respuesta.jpg)
 
 ## 1. Instala Ollama
 
@@ -60,9 +61,9 @@ Los modelos más pequeños sirven para empezar y pueden dar explicaciones más l
 
 ## 3. Haz tu primera pregunta
 
-1. Copia el comando de la tabla en Terminal o PowerShell y pulsa Intro. Espera a que termine la descarga. Usa `ollama list` para confirmar que aparece el modelo.
-2. Mantén Ollama abierto e inicia Plaza en el mismo ordenador. Responde una pregunta y pulsa **Preguntar** en la corrección.
-3. Selecciona el modelo que descargaste. Prueba con «¿Qué parte del artículo descarta mi respuesta?» y pulsa **Explicar con Ollama**. La primera respuesta puede tardar mientras el modelo se carga.
+1. Copia el comando de la tabla en Terminal o PowerShell. Cuando termine la descarga, usa `ollama list` para confirmar que aparece el modelo.
+2. Mantén Ollama abierto e inicia Plaza en el mismo ordenador. En **Configurar Ollama**, selecciona el modelo y pulsa **Guardar y cerrar**.
+3. Responde una pregunta y pulsa **Preguntar** en la corrección. Prueba con «¿Qué parte del artículo descarta mi respuesta?». La primera respuesta puede tardar mientras el modelo se carga.
 4. Lee la explicación junto al artículo. Una cita literal puede ser correcta aunque la interpretación sea equivocada.
 
-Si el selector aparece vacío, comprueba que Ollama está abierto y que `ollama list` muestra el modelo. Pulsa **Volver a comprobar** en el mismo cuadro. [Ayuda de Plaza](AYUDA.md) · [Solución de problemas en Aulafy.net](https://www.aulafy.net/cursos/ia-local/troubleshooting-ollama)
+Si necesitas cambiar de modelo o verificar la conexión, vuelve a **Configurar Ollama**. [Ayuda de Plaza](AYUDA.md) · [Solución de problemas en Aulafy.net](https://www.aulafy.net/cursos/ia-local/troubleshooting-ollama)

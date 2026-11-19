@@ -801,3 +801,10 @@ button.icon-btn{cursor:pointer;padding:0}
 .tutor-guia li {padding-inline-start: .25rem; margin-block: .65rem}
 .tutor-comando {display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin-top: .5rem}
 .tutor-comando code {padding: .45rem; border: 1px solid var(--line); border-radius: .3rem; user-select: all}
+.tutor-dialog {position:fixed;inset:0 0 0 auto;margin:0;border:0;padding:0;width:min(480px,100vw);height:100dvh;max-width:none;max-height:none;background:transparent;color:var(--ink)}
+.tutor-dialog::backdrop {background:rgba(10,14,20,.28)}
+.tutor-dialog .tutor-p {position:relative;width:100%;height:100%;transform:none}
+.tutor-dialog .tutor-msgs {min-height:80px}
+.tutor-dialog .tutor-sug {max-height:26vh;overflow:auto}
+.tutor-dialog .tutor-in textarea {min-width:0}
+.tutor-dialog .tutor-sug[hidden] {display:none}

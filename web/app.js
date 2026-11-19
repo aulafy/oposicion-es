@@ -230,8 +230,8 @@ function enlazaFundamento(root) {
     <p class="muted" style="font-size:13.5px">Aun así puede ser imprecisa. Si ves algo raro, usa «Reportar error».</p></div><div class="df"><button class="btn primary" data-cerrar>Entendido</button></div>`));
 }
 function tutorCTA() { return `<div class="tutor-cta"><span class="ico">${ic('ia')}</span><div><b>¿Te queda alguna duda?</b><span>Pregúntale al tutor por qué, pídele un ejemplo o un truco para recordarlo.</span></div><button class="btn sm" data-tutor>Preguntar</button></div>`; }
-async function abrirTutor(q, r, res, convocatoria = CONV_DE[q.banco] || '') {
-  const d = dialogo(`<div class="dh"><div><p class="eyebrow">Tutor local</p><h2>Entender esta respuesta</h2></div><button class="btn ghost" data-cerrar>Cerrar</button></div>
+function configurarTutor() {
+  const d = dialogo(`<div class="dh"><div><p class="eyebrow">Tutor de Plaza</p><h2>Configurar Ollama</h2></div><button class="btn ghost" data-cerrar>Cerrar</button></div>
     <form class="db tutor-local">
     <p role="status">Buscando modelos en Ollama…</p>
     <details class="tutor-guia">
@@ -252,15 +252,12 @@ async function abrirTutor(q, r, res, convocatoria = CONV_DE[q.banco] || '') {
     </details>
     <button class="btn sm" type="button" data-comprobar>Volver a comprobar</button>
     <div data-modelos hidden>
-      <p>${esc(q.enunciado)}</p><p><b>Respuesta correcta</b> · ${esc(op(q.opciones[res.correcta]))}</p>
-      <label>Modelo de tu ordenador<select required></select></label>
-      <label>Tu duda<textarea required maxlength="600">¿Por qué es correcta esta respuesta?</textarea></label>
-      <button class="btn primary" type="submit" disabled>Explicar con Ollama</button>
-      <div class="respuesta" aria-live="polite"></div>
+      <label>Modelo de tu ordenador<select></select></label>
+      <button class="btn primary" type="button" data-guardar-modelo>Guardar y cerrar</button>
     </div></form>`);
   const form = d.querySelector('form'), modelo = form.querySelector('select');
-  const estado = form.querySelector('[role=status]'), boton = form.querySelector('[type=submit]');
-  const salida = form.querySelector('.respuesta'), control = new AbortController();
+  const estado = form.querySelector('[role=status]'), boton = form.querySelector('[data-guardar-modelo]');
+  const control = new AbortController();
   const guia = form.querySelector('details'), comprobar = form.querySelector('[data-comprobar]');
   const campos = form.querySelector('[data-modelos]');
   d.addEventListener('close', () => control.abort(), {once:true});
@@ -309,7 +306,7 @@ async function abrirTutor(q, r, res, convocatoria = CONV_DE[q.banco] || '') {
       if (modelos.some(m => m.nombre === elegido)) modelo.value = elegido;
       guia.open = conexion.open = false;
       boton.disabled = false;
-      estado.textContent = 'Ollama está listo. Elige un modelo y escribe tu duda.';
+      estado.textContent = 'Ollama está listo. Elige un modelo y guarda tu selección.';
     } catch {
       if (control.signal.aborted) return;
       campos.hidden = true;
@@ -319,24 +316,119 @@ async function abrirTutor(q, r, res, convocatoria = CONV_DE[q.banco] || '') {
       comprobar.disabled = false;
     }
   };
-  form.onsubmit = async e => {
-    e.preventDefault();
-    if (boton.disabled) return;
-    comprobar.disabled = boton.disabled = true;
-    S.ui.ollamaModelo = modelo.value; save();
-    estado.textContent = 'El modelo está preparando la explicación…'; salida.textContent = '';
-    try {
-      const resultado = await ollama.responder({id:q.id, r, conv:convocatoria, modelo:modelo.value,
-        mensajes:[{role:'user', content:form.querySelector('textarea').value}], signal:control.signal,
-        onTexto:parte => { salida.append(document.createTextNode(parte)); }});
-      const v = resultado.verificacion;
-      estado.textContent = v.avisos.length ? 'Revisa la explicación. ' + v.avisos.join(' ') :
-        `Citas literales comprobadas: ${v.citas_ok} de ${v.citas}. Contrasta la explicación con el artículo.`;
-    } catch (error) {
-      if (!control.signal.aborted) estado.textContent = 'Ollama no pudo terminar. ' + error.message;
-    } finally { comprobar.disabled = boton.disabled = false; }
+  boton.onclick = () => {
+    S.ui.ollamaModelo = modelo.value;
+    save();
+    d.close();
+    toast('Tutor listo. Pulsa «Preguntar» en cualquier corrección.');
   };
   comprobar.click();
+}
+$$('[data-configurar-tutor]').forEach(boton => boton.onclick = configurarTutor);
+
+const TUT = Object.create(null);
+function md(t) {  // markdown mínimo y seguro: párrafos, listas, citas «…» o «> …», títulos y **negrita**
+  const inl = (x) => esc(x).replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<i>$2</i>').replace(/«([^»]{3,})»/g, '<q class="cita">$1</q>');
+  let h = '', lista = null, nOl = 0;  // nOl: último número de la lista numerada; un párrafo, cita o título la reinicia
+  const cierra = () => { if (lista) { h += `</${lista}>`; lista = null; } };
+  for (const b of t.trim().split(/\n{2,}/)) {
+    let par = [];
+    const vuelca = () => { if (par.length) { h += `<p>${par.join('<br>')}</p>`; par = []; nOl = 0; } };
+    for (const l of b.split('\n').filter((x) => x.trim())) {
+      let m;
+      if ((m = l.match(/^\s*(?:[-*•]|(\d+)[.)])\s+(.*)$/))) { vuelca(); const tag = m[1] ? 'ol' : 'ul'; if (lista !== tag) { cierra(); h += `<${tag}>`; lista = tag; } if (m[1]) { nOl = +m[1] > nOl ? +m[1] : nOl + 1; h += `<li value="${nOl}">${inl(m[2])}</li>`; } else h += `<li>${inl(m[2])}</li>`; continue; }  // nOl: sigue la numeración aunque unas viñetas la corten
+      if ((m = l.match(/^\s*>\s?(.*)$/))) { vuelca(); cierra(); nOl = 0; h += `<blockquote class="cita-b">${inl(m[1].replace(/^[“"«]|[”"»]$/g, ''))}</blockquote>`; continue; }
+      if ((m = l.match(/^\s*#{1,4}\s+(.*)$/))) { vuelca(); cierra(); nOl = 0; h += `<p><b>${inl(m[1])}</b></p>`; continue; }
+      if (lista && /^\s{2,}/.test(l)) { h = h.replace(/<\/li>$/, `<br>${inl(l.trim())}</li>`); continue; }
+      cierra(); par.push(inl(l));
+    }
+    vuelca(); if (!/^\s*(?:[-*•]|\d+[.)])\s/m.test(b)) cierra();
+  }
+  cierra(); return h;
+}
+function abrirTutor(q, r, res, convocatoria = CONV_DE[q.banco] || '') {
+  if (!S.ui.ollamaModelo) return configurarTutor();
+  const el = document.createElement('dialog');
+  el.id = 'tutor';
+  el.className = 'tutor-dialog on';
+  el.setAttribute('aria-labelledby', 'tutorT');
+  document.body.append(el);
+  const clave = JSON.stringify([q.id, convocatoria, r, S.ui.ollamaModelo]);
+  const conv = TUT[clave] = TUT[clave] || [];
+  const ley = res.norma && res.norma.startsWith('BO') ? `${articulo(res.bloque, res.texto)} · ${corta(res.norma, res.titulo)}` : (res.titulo || 'Caso práctico');
+  const blanco = r === null || r === undefined || r < 0; const fallo = !blanco && r !== res.correcta;
+  const sug = [fallo ? `¿Por qué no es «${op(q.opciones[r]).slice(0, 60)}»?` : blanco ? '¿Cómo llego a la respuesta correcta?' : '¿Por qué es esta la correcta?', 'Explícamelo con un ejemplo práctico', 'Dame un truco para recordarlo', '¿Qué suelen confundir los opositores aquí?'];
+  el.innerHTML = `<section class="tutor-p">
+      <header class="tutor-h"><span class="av">${ic('ia')}</span><div><h2 id="tutorT">Tutor de Plaza</h2><p>Entiende el porqué de cada respuesta</p></div><button class="btn ghost sm" data-cerrar-t aria-label="Cerrar tutor">${ic('x')}</button></header>
+      <div class="tutor-ctx"><p class="eyebrow">Sobre esta pregunta</p><p class="q">${esc(q.enunciado.replace(/\s+/g, ' '))}</p>
+        <p class="tutor-referencia">${ic('leyes', 'sm')} ${esc(ley)}</p><div class="row">${blanco ? '<span class="pill">En blanco</span>' : `<span class="pill ${fallo ? 'bad' : 'ok'}">Tu respuesta: ${LETRAS[r]}</span>`}<span class="pill ok">Correcta: ${LETRAS[res.correcta]}</span></div></div>
+      <div class="tutor-msgs" id="tMsgs" aria-live="polite"></div>
+      <div class="tutor-sug" id="tSug">${sug.map((s) => `<button class="chip" data-s="${esc(s)}">${esc(s)}</button>`).join('')}</div>
+      <form class="tutor-in" id="tForm"><textarea id="tTxt" rows="1" placeholder="Escribe tu duda…" maxlength="600" aria-label="Tu duda"></textarea><button class="btn primary send" id="tSend" aria-label="Enviar">${ic('enviar')}</button></form>
+      <p class="tutor-foot">Contrasta la explicación con el artículo.</p>
+    </section>`;
+  const msgs = $('#tMsgs', el), txt = $('#tTxt', el), send = $('#tSend', el);
+  let solicitud = null;
+  const ajustar = () => { msgs.scrollTop = msgs.scrollHeight; };
+  function pintar() {
+    msgs.innerHTML = `<div class="msg a"><span class="av sm">${ic('ia', 'sm')}</span><div class="mb"><p>¿Qué parte de esta respuesta quieres entender mejor?</p></div></div>` +
+      conv.map(m => m.role === 'user' ? `<div class="msg u">${esc(m.content)}</div>` :
+        `<div class="msg a"><span class="av sm">${ic('ia', 'sm')}</span><div class="mb">${md(m.content)}
+        ${m.ver?.avisos.length ? `<p class="ver warn">${esc(m.ver.avisos.join(' '))}</p>` : ''}
+        ${m.error ? `<p class="err">${esc(m.error)}</p>` : ''}</div></div>`).join('');
+    $('#tSug', el).hidden = conv.length > 0;
+    ajustar();
+  }
+  async function enviar(texto) {
+    texto = texto.trim();
+    if (!texto || solicitud) return;
+    conv.push({ role: 'user', content: texto });
+    const historial = conv.filter(m => !m.error).map(({role, content}) => ({role, content}));
+    const respuesta = { role: 'assistant', content: '' };
+    conv.push(respuesta);
+    txt.value = '';
+    pintar();
+    const destino = $('.mb', msgs.lastElementChild);
+    destino.textContent = 'Leyendo el artículo…';
+    ajustar();
+    solicitud = new AbortController();
+    send.innerHTML = ic('parar');
+    send.setAttribute('aria-label', 'Detener respuesta');
+    try {
+      const resultado = await Plaza.tutorLocal.responder({
+        id: q.id, r: blanco ? null : r, conv: convocatoria, modelo: S.ui.ollamaModelo,
+        mensajes: historial, signal: solicitud.signal,
+        onTexto: trozo => { respuesta.content += trozo; destino.innerHTML = md(respuesta.content); ajustar(); },
+      });
+      respuesta.ver = resultado.verificacion;
+      if (!respuesta.content.trim()) respuesta.error = 'No he recibido una respuesta. Inténtalo otra vez.';
+    } catch (error) {
+      respuesta.error = solicitud.signal.aborted ? 'Respuesta detenida.' :
+        'No he podido responder. Comprueba el tutor desde «Configurar Ollama» en el menú.';
+    } finally {
+      solicitud = null;
+      send.innerHTML = ic('enviar');
+      send.setAttribute('aria-label', 'Enviar');
+      if (el.open) { pintar(); txt.focus(); }
+    }
+  }
+  $('#tForm', el).onsubmit = e => {
+    e.preventDefault();
+    if (solicitud) solicitud.abort();
+    else enviar(txt.value);
+  };
+  txt.onkeydown = e => {
+    if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) {
+      e.preventDefault();
+      enviar(txt.value);
+    }
+  };
+  $$('[data-s]', el).forEach(boton => boton.onclick = () => enviar(boton.dataset.s));
+  $('[data-cerrar-t]', el).onclick = () => el.close();
+  el.addEventListener('click', e => { if (e.target === el) el.close(); });
+  el.addEventListener('close', () => { solicitud?.abort(); el.remove(); }, {once:true});
+  pintar();
+  el.showModal();
 }
 
 function reportar(id, r, conv = '') {
