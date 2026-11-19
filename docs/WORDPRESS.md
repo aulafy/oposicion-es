@@ -15,7 +15,7 @@ El sitio publicado debe usar HTTPS para guardar los recursos de la app y poder a
 
 ## Tutor local con Ollama
 
-Cada usuario que quiera usar el tutor instala Ollama y descarga un modelo en su propio ordenador. Los tests y las correcciones están disponibles desde el primer día. [Guía del tutor](TUTOR.md)
+Cada usuario que quiera usar el tutor instala Ollama y descarga un modelo en su propio ordenador. Después, guarda el modelo desde **Configurar Ollama** en Plaza. Los tests y las correcciones están disponibles desde el primer día. [Guía del tutor](TUTOR.md)
 
 Para usar el tutor desde un dominio publicado, Ollama debe autorizar el origen exacto del sitio. Si la dirección de Plaza empieza por `https://oposiciones.ejemplo.es/`, el origen es `https://oposiciones.ejemplo.es`, con el puerto si aparece en la dirección. Configura `OLLAMA_ORIGINS` con ese valor y reinicia Ollama. En macOS puedes usar `launchctl setenv OLLAMA_ORIGINS "https://oposiciones.ejemplo.es"`. En Windows puedes usar `setx OLLAMA_ORIGINS "https://oposiciones.ejemplo.es"` y volver a abrir Ollama. En Linux con systemd, añade `Environment="OLLAMA_ORIGINS=https://oposiciones.ejemplo.es"` en la sección `[Service]` de la configuración del servicio y reinícialo. Si el navegador pide acceso a la red local, concédelo al dominio donde instalaste Plaza. Mantén Ollama escuchando en su dirección local. [Configuración oficial de Ollama](https://docs.ollama.com/faq#how-can-i-allow-additional-web-origins-to-access-ollama)
 

@@ -1,36 +1,10 @@
 # Configurar el tutor de Plaza con Ollama
 
-Ollama ejecuta un modelo de IA en tu ordenador para ayudarte a entender la corrección de una pregunta. Instálalo si quieres usar el botón **Preguntar**. Puedes hacer tests y leer las explicaciones incluidas desde que abres Plaza.
+El tutor te ayuda a entender por qué una respuesta es correcta. Ollama ejecuta el modelo de IA en tu ordenador. Puedes hacer tests y leer las correcciones desde el primer día. Configura Ollama cuando quieras hacer tus propias preguntas al tutor.
 
 ## Configuración paso a paso con capturas
 
-### Configura el tutor una vez
-
-Instala Ollama siguiendo [los pasos de tu sistema](#1-instala-ollama). En Plaza, pulsa **Configurar Ollama** debajo del menú lateral. En una pantalla estrecha, usa el icono de configuración de la barra superior.
-
-Si aún necesitas un modelo, abre Terminal (macOS o Linux) o PowerShell (Windows) y ejecuta:
-
-```text
-ollama pull qwen3:1.7b
-```
-
-Cuando termine, vuelve a Plaza, pulsa **Volver a comprobar**, elige el modelo y selecciona **Guardar y cerrar**.
-
-![Configuración de Ollama en Plaza con el comando de descarga y el botón Volver a comprobar](capturas/tutor/configuracion.jpg)
-
-### Pregunta desde una corrección
-
-Responde una pregunta y pulsa **Preguntar** al pie del fundamento.
-
-![Corrección de Plaza con el botón Preguntar al final del fundamento](capturas/tutor/preguntar.jpg)
-
-### Habla con el tutor
-
-Usa una de las sugerencias para entender tu error, pedir un ejemplo o buscar un truco para recordar la respuesta. También puedes escribir tu propia duda y hacer una pregunta de seguimiento. Plaza usa el modelo que guardaste en la configuración.
-
-![Panel del Tutor de Plaza con una pregunta y una explicación generada](capturas/tutor/modelo-y-respuesta.jpg)
-
-## 1. Instala Ollama
+### 1. Instala y abre Ollama
 
 - **macOS.** Descarga la aplicación, muévela a Aplicaciones si el instalador te lo pide y ábrela. Consulta los requisitos de tu versión de macOS. [Guía oficial para macOS](https://docs.ollama.com/macos)
 - **Windows.** Descarga y ejecuta el instalador de Ollama. Al terminar, abre Ollama desde el menú Inicio y abre una ventana nueva de PowerShell. [Guía oficial para Windows](https://docs.ollama.com/windows)
@@ -38,11 +12,35 @@ Usa una de las sugerencias para entender tu error, pedir un ejemplo o buscar un 
 
 Para seguir la instalación y descargar tu primer modelo con una explicación en español, consulta la lección de Aulafy.net. [Ollama desde cero](https://www.aulafy.net/cursos/ia-local/ollama-desde-cero) · [Descargar Ollama](https://ollama.com/download) · [Guía oficial de inicio](https://docs.ollama.com/quickstart)
 
-## 2. Elige un modelo que quepa en tu equipo
+### 2. Descarga un modelo
+
+Abre **Terminal** en macOS o Linux, o **PowerShell** en Windows. Para empezar, copia este comando, pégalo y pulsa Intro. La descarga necesita internet y ocupa aproximadamente 1,4 GB. Si ya tienes un modelo local, puedes usarlo.
+
+```text
+ollama pull qwen3:1.7b
+```
+
+### 3. Guarda el modelo en Plaza
+
+Abre **Configurar Ollama**, debajo del menú lateral de Plaza. En una pantalla estrecha, usa el icono de engranaje de la barra superior. Pulsa **Volver a comprobar** si acabas de descargar un modelo, elígelo en **Modelo de tu ordenador** y pulsa **Guardar y cerrar**.
+
+![Cuadro Configurar Ollama con el comando de descarga y el botón Volver a comprobar](capturas/tutor/configuracion.jpg)
+
+### 4. Haz tu primera pregunta
+
+Responde una pregunta del test y pulsa **Preguntar** al final de la corrección. El tutor abre una conversación con el modelo que guardaste.
+
+![Corrección de Plaza con el botón Preguntar al pie del fundamento](capturas/tutor/preguntar.jpg)
+
+Puedes elegir una sugerencia para entender un error, pedir un ejemplo o buscar un truco para recordar la respuesta. También puedes escribir tu duda y hacer preguntas de seguimiento. La primera respuesta puede tardar mientras el modelo se carga. Lee la explicación junto al artículo que muestra Plaza.
+
+![Tutor de Plaza con una pregunta y una explicación generada](capturas/tutor/modelo-y-respuesta.jpg)
+
+## Modelos según la memoria del ordenador
 
 Si tienes **8 GB**, empieza con **Qwen3 1.7B**. Con **16 GB**, prueba primero **Qwen2.5 3B**, que hemos usado con el tutor de Plaza en macOS. Descarga un solo modelo para comenzar.
 
-Estas diez opciones son orientativas. La **memoria** es la que usa el ordenador para trabajar. El tamaño de **descarga** es el espacio que ocupa el modelo en disco. Deja memoria libre para el sistema, el navegador y el texto de la pregunta. En un Mac con Apple Silicon cuenta la memoria unificada. En un PC con gráfica dedicada, comprueba también su memoria de vídeo. Si tu ordenador usa solo el procesador, empieza con un modelo pequeño y espera respuestas más lentas.
+La tabla indica el **espacio en disco** que ocupa cada descarga. La **memoria RAM** necesaria para ejecutar el modelo depende también de las demás aplicaciones abiertas y de la longitud del texto que lea el tutor. En un Mac con Apple Silicon, fíjate en la memoria unificada. Si tu ordenador usa solo el procesador, empieza por un modelo pequeño.
 
 | Equipo orientativo | Comando para descargar | Espacio aproximado |
 | --- | --- | --- |
@@ -59,11 +57,11 @@ Estas diez opciones son orientativas. La **memoria** es la que usa el ordenador 
 
 Los modelos más pequeños sirven para empezar y pueden dar explicaciones más limitadas. Si Ollama indica que falta memoria, baja un tamaño. Contrasta la respuesta con el artículo incluso si usas un modelo grande. [Tamaños de Qwen3](https://ollama.com/library/qwen3/tags) · [Ficha de Qwen2.5 3B](https://ollama.com/library/qwen2.5:3b) · [Tamaños de Gemma 3](https://ollama.com/library/gemma3/tags)
 
-## 3. Haz tu primera pregunta
+## Si el tutor no conecta
 
-1. Copia el comando de la tabla en Terminal o PowerShell. Cuando termine la descarga, usa `ollama list` para confirmar que aparece el modelo.
-2. Mantén Ollama abierto e inicia Plaza en el mismo ordenador. En **Configurar Ollama**, selecciona el modelo y pulsa **Guardar y cerrar**.
-3. Responde una pregunta y pulsa **Preguntar** en la corrección. Prueba con «¿Qué parte del artículo descarta mi respuesta?». La primera respuesta puede tardar mientras el modelo se carga.
-4. Lee la explicación junto al artículo. Una cita literal puede ser correcta aunque la interpretación sea equivocada.
+- **Plaza no detecta Ollama.** Abre Ollama en el mismo ordenador. En Plaza, entra en **Configurar Ollama** y pulsa **Volver a comprobar**.
+- **Ollama está abierto y el selector está vacío.** Ejecuta `ollama list` en Terminal o PowerShell. Si el modelo no aparece, descárgalo y vuelve a comprobar.
+- **El equipo se queda sin memoria.** Cierra otras aplicaciones o elige un modelo más pequeño. Puedes cambiarlo en **Configurar Ollama**.
+- **Usas Plaza desde WordPress.** Si el navegador pide acceso a la red local, concédelo al sitio de Plaza. Para autorizar el dominio en Ollama, sigue la [guía de WordPress](WORDPRESS.md#tutor-local-con-ollama).
 
-Si necesitas cambiar de modelo o verificar la conexión, vuelve a **Configurar Ollama**. [Ayuda de Plaza](AYUDA.md) · [Solución de problemas en Aulafy.net](https://www.aulafy.net/cursos/ia-local/troubleshooting-ollama)
+[Ayuda de Plaza](AYUDA.md) · [Solución de problemas en Aulafy.net](https://www.aulafy.net/cursos/ia-local/troubleshooting-ollama)

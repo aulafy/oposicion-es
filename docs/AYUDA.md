@@ -6,7 +6,7 @@
 
 **No veo la opción de instalar.** Puedes estudiar en una pestaña normal. Para tener un icono, abre la dirección local en Chrome o Edge y busca la opción de instalación en su menú.
 
-**El tutor no encuentra modelos.** Ejecuta `ollama list`, comprueba que Ollama está abierto y vuelve a abrir el tutor. El navegador y Ollama deben estar en el mismo ordenador. Si al generar falta memoria, cierra otras aplicaciones o descarga un modelo más pequeño. [Configurar el tutor](TUTOR.md)
+**El tutor no encuentra modelos.** Ejecuta `ollama list`, comprueba que Ollama está abierto y pulsa **Volver a comprobar** en **Configurar Ollama**. El navegador y Ollama deben estar en el mismo ordenador. Si al generar falta memoria, cierra otras aplicaciones o descarga un modelo más pequeño. [Configurar el tutor](TUTOR.md)
 
 **Quiero conservar mi progreso al actualizar la aplicación.** Cierra el lanzador, descarga y extrae el nuevo ZIP y abre la nueva copia con el mismo navegador y dirección. Si clonaste el repositorio, puedes ejecutar `git pull --ff-only` y volver a iniciar. Borrar los datos del sitio, utilizar navegación privada o cambiar de perfil afecta al historial local.
 
