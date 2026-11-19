@@ -2,7 +2,7 @@
 
 Plaza es un proyecto abierto de [Aulafy.net](https://www.aulafy.net/). Puedes practicar con tests, supuestos y simulacros, y consultar el artículo que fundamenta cada corrección. Los ejercicios incluidos funcionan sin conexión. Tu progreso queda guardado en el navegador que uses para estudiar.
 
-**[Descargar Plaza](https://github.com/aulafy/oposicion-es/archive/refs/heads/main.zip)** · [Instalar en macOS, Windows o Linux](docs/INSTALACION.md) · [Configurar el tutor con Ollama](docs/TUTOR.md)
+**[Descargar Plaza](https://github.com/aulafy/oposicion-es/archive/refs/heads/main.zip)** · [Instalar en macOS, Windows o Linux](docs/INSTALACION.md) · [Configurar el tutor con Ollama](docs/TUTOR.md) · [Instalar Ollama](docs/OLLAMA-INSTALACION.md)
 
 Si es tu primera vez en GitHub, puedes copiar un texto preparado para que Codex o Claude te ayuden con la instalación. [Instalar con ayuda de un asistente](docs/INSTALAR-CON-UN-ASISTENTE.md)
 

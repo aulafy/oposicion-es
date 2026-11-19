@@ -6,6 +6,8 @@ El tutor te ayuda a entender por qué una respuesta es correcta. Ollama ejecuta 
 
 ### 1. Instala y abre Ollama
 
+Si es tu primera instalación, sigue la [guía de instalación de Ollama](OLLAMA-INSTALACION.md) para tu sistema.
+
 - **macOS.** Descarga la aplicación, muévela a Aplicaciones si el instalador te lo pide y ábrela. Consulta los requisitos de tu versión de macOS. [Guía oficial para macOS](https://docs.ollama.com/macos)
 - **Windows.** Descarga y ejecuta el instalador de Ollama. Al terminar, abre Ollama desde el menú Inicio y abre una ventana nueva de PowerShell. [Guía oficial para Windows](https://docs.ollama.com/windows)
 - **Linux.** Sigue los pasos del instalador oficial de Ollama. Si el servicio está detenido, ejecuta `ollama serve` y deja esa terminal abierta. Usa otra terminal para descargar el modelo. [Guía oficial para Linux](https://docs.ollama.com/linux)
