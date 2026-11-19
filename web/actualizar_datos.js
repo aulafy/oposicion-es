@@ -1,5 +1,5 @@
 (function (w) {
-  const base = 'https://raw.githubusercontent.com/aulafy/oposicion-es/main/web/', prefijo = 'plaza-datos-', fetchReal = w.fetch.bind(w);
+  const prefijo = 'plaza-datos-', fetchReal = w.fetch.bind(w);
   let incluida, pendiente;
   const estado = () => { try { const s = JSON.parse(w.localStorage.getItem('plaza.datos')); return s && s.version && s.manifiesto && s.manifiesto.ficheros ? s : null; } catch (e) { return null; } };
   const validar = m => { if (!m || !/^[a-f0-9]{12}$/.test(m.version) || typeof m.generado !== 'string' || !m.ficheros || typeof m.ficheros !== 'object' || Array.isArray(m.ficheros)) throw new Error('Manifiesto inválido'); for (const [p, v] of Object.entries(m.ficheros)) if (!/^datos\/(?:[\w-]+\/)*[\w.-]+$/.test(p) || p.split('/').some(x => x === '.' || x === '..') || !v || !/^[a-f0-9]{64}$/.test(v.sha256) || !Number.isSafeInteger(v.bytes) || v.bytes < 0) throw new Error('Fichero inválido en el manifiesto'); return m; };
@@ -12,7 +12,13 @@
   async function actualizar() {
     let nuevo, nombre, confirmado = false;
     try {
-      try { nuevo = await descargar(base + 'datos/manifest.json', true); } catch (e) { return { estado: 'sin-conexion', detalle: String(e) }; }
+      let base;
+      try {
+        const ref = await descargar('https://api.github.com/repos/aulafy/oposicion-es/git/ref/heads/main', true);
+        if (!/^[a-f0-9]{40}$/.test(ref?.object?.sha)) throw new Error('Referencia de publicación inválida');
+        base = 'https://raw.githubusercontent.com/aulafy/oposicion-es/' + ref.object.sha + '/web/';
+        nuevo = await descargar(base + 'datos/manifest.json', true);
+      } catch (e) { return { estado: 'sin-conexion', detalle: String(e) }; }
       validar(nuevo);
       const original = await bundled(), guardado = estado();
       // Si la app se actualizó con datos incluidos más recientes que los descargados, se parte de los incluidos.
