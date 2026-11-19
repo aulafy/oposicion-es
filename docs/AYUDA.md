@@ -1,6 +1,6 @@
 # Si algo falla
 
-**El doble clic no abre Plaza.** Comprueba que extrajiste el ZIP completo. Abre una terminal dentro de la carpeta donde ves `iniciar.py`. En Windows ejecuta `py -3 iniciar.py` (o `python iniciar.py`). En macOS y Linux ejecuta `python3 iniciar.py`. Si falta Python, vuelve al segundo paso del README.
+**El doble clic no abre Plaza.** Comprueba que extrajiste el ZIP completo. Abre una terminal dentro de la carpeta donde ves `iniciar.py`. En Windows ejecuta `py -3 iniciar.py` (o `python iniciar.py`). En macOS y Linux ejecuta `python3 iniciar.py`. Si falta Python, sigue los pasos para tu sistema en la [guía de instalación](INSTALACION.md).
 
 **El navegador no se abre o el icono instalado pide el lanzador.** Deja el lanzador abierto y visita http://127.0.0.1:8826/. Si el puerto está ocupado, comprueba si ya tienes otra ventana de Plaza abierta.
 
