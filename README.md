@@ -4,6 +4,8 @@ Plaza es un proyecto abierto de [Aulafy.net](https://www.aulafy.net/). Puedes pr
 
 **[Descargar Plaza](https://github.com/aulafy/oposicion-es/archive/refs/heads/main.zip)** · [Instalar en macOS, Windows o Linux](docs/INSTALACION.md) · [Configurar el tutor con Ollama](docs/TUTOR.md)
 
+Si es tu primera vez en GitHub, puedes copiar un texto preparado para que Codex o Claude te ayuden con la instalación. [Instalar con ayuda de un asistente](docs/INSTALAR-CON-UN-ASISTENTE.md)
+
 Puedes usar Plaza como portada de un sitio WordPress mediante el tema incluido en el repositorio. [Instalación en WordPress](docs/WORDPRESS.md)
 
 ## Así se usa Plaza

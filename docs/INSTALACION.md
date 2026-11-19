@@ -2,6 +2,8 @@
 
 Necesitas un ordenador con navegador y Python 3.9 o posterior. Python permite abrir Plaza desde tu propio ordenador. Puedes empezar a estudiar en cuanto completes los pasos de tu sistema.
 
+Si quieres que Codex o Claude te acompañen, copia el texto de la [guía para instalar con un asistente](INSTALAR-CON-UN-ASISTENTE.md).
+
 ## 1. Descarga Plaza
 
 Descarga el ZIP y extráelo en Documentos. Abre la carpeta extraída, donde verás el archivo `iniciar.py`. Conserva juntos todos los archivos y carpetas. [Descargar el ZIP](https://github.com/aulafy/oposicion-es/archive/refs/heads/main.zip)
