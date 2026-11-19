@@ -5,3 +5,5 @@ mantenimiento/oposiciones/.bloqueo
 mantenimiento/oposiciones/textos/
 mantenimiento/oposiciones/revision_oep.json
 mantenimiento/oposiciones/oposiciones.json
+
+/dist/
