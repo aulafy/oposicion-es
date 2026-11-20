@@ -233,14 +233,14 @@
       "sha256": "67a0091217a1bae1e21325f7de21659d1e2164c51ec10be10a97d5b95c0d9680"
     },
     "datos/oposiciones.json": {
-      "bytes": 1042073,
-      "sha256": "72277d0aebd511e09b583f193c9272c969d4ff0dd04002abd88b4ce084f27669"
+      "bytes": 1042150,
+      "sha256": "8657cd7fbcb42cbbfd0e133c77cb60e67af4aae899a52bd4c16eb18dc3858529"
     },
     "datos/versiones.json": {
       "bytes": 153239,
       "sha256": "e2828c0cf8c7370b8db7f68b365ebe13904d6338dff3be107659d605faba04a6"
     }
   },
-  "generado": "2026-11-20T19:23:15.606465+00:00",
-  "version": "6d851936e057"
+  "generado": "2026-11-20T19:28:05.124691+00:00",
+  "version": "02045110693d"
 }
