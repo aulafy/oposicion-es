@@ -1,1 +1,10 @@
-{}
+{
+  "BOE-A-2003-20977": {
+    "fecha_anterior": "20261119T081545Z",
+    "fecha_detectada": "20261120T085717Z"
+  },
+  "BOE-A-2015-10566": {
+    "fecha_anterior": "20261117T092017Z",
+    "fecha_detectada": "20261120T085000Z"
+  }
+}
