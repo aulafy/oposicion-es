@@ -209,8 +209,8 @@
       "sha256": "f53d38b8ae2d37689b365f35e071565dabdc095e5a5676264b962279fe17373a"
     },
     "datos/leyes/BOE-A-2017-12902.json": {
-      "bytes": 1271056,
-      "sha256": "d610f3e3fb7d82fff5e68aacaef6eac481752339fdc2ca9cd8bd498489ca239d"
+      "bytes": 1273366,
+      "sha256": "cf05c580d10ebbc6cb4877e125edc9964926c9f1e879c8383e7ae6278568c2f8"
     },
     "datos/leyes/BOE-A-2018-3760.json": {
       "bytes": 182167,
@@ -229,8 +229,8 @@
       "sha256": "19e8c8771322ab05d0f17fd28e2bd55db7fd61119af67253626a7864f652ef45"
     },
     "datos/meta.json": {
-      "bytes": 25928,
-      "sha256": "363990b981afcf36509b230e8ad559b1a4041793e410825c1aaeba28beea3aac"
+      "bytes": 26247,
+      "sha256": "67a0091217a1bae1e21325f7de21659d1e2164c51ec10be10a97d5b95c0d9680"
     },
     "datos/oposiciones.json": {
       "bytes": 1042073,
@@ -241,6 +241,6 @@
       "sha256": "e2828c0cf8c7370b8db7f68b365ebe13904d6338dff3be107659d605faba04a6"
     }
   },
-  "generado": "2026-11-19T20:47:39.177673+00:00",
-  "version": "1f8829425110"
+  "generado": "2026-11-20T19:23:15.606465+00:00",
+  "version": "6d851936e057"
 }
