@@ -28028,5 +28028,185 @@
   "puesto": "Administrativo/a",
   "grupo": "C1",
   "bases": "Boletín Oficial de la Provincia de Badajoz n.º 215, de 10 de noviembre de 2026"
+ },
+ "BOE-A-2026-24459": {
+  "plazo": {
+   "cifra": 20,
+   "unidad": "dia",
+   "calificacion": "habiles",
+   "desde": "BOE",
+   "frase": "plazo de presentación de solicitudes de veinte días hábiles contados a partir del día siguiente al de la fecha de publicación de esta convocatoria en el «Boletín Oficial del Estado»"
+  },
+  "fin": "20261221",
+  "sistema": "oposición",
+  "plazas": 116,
+  "puesto": "Cuerpo de Oficiales de Arsenales de la Armada",
+  "reserva_discapacidad": true,
+  "oep": "2026",
+  "oep_anos": [
+   "2026"
+  ],
+  "oep_rd": [
+   "387/2026",
+   "656/2024"
+  ]
+ },
+ "BOE-A-2026-24463": {
+  "plazo": {
+   "cifra": 20,
+   "unidad": "dia",
+   "calificacion": "habiles",
+   "desde": "BOE",
+   "frase": "plazo de presentación de solicitudes será de veinte días hábiles a contar desde el siguiente al de la publicación de esta resolución en el «Boletín Oficial del Estado»"
+  },
+  "fin": "20261221",
+  "sistema": "concurso-oposición",
+  "plazas": 1,
+  "puesto": "Coordinador/a de Deportes del Ayuntamiento de Pego",
+  "grupo": "A1",
+  "bases": "Boletín Oficial de la Provincia de Alicante n.º 205, de 28 de octubre de 2026"
+ },
+ "BOE-A-2026-24464": {
+  "plazo": {
+   "cifra": 20,
+   "unidad": "dia",
+   "calificacion": "habiles",
+   "desde": "BOE",
+   "frase": "plazo de presentación de solicitudes será de veinte días hábiles a contar desde el siguiente al de la publicación de esta resolución en el «Boletín Oficial del Estado»"
+  },
+  "fin": "20261221",
+  "sistema": "concurso-oposición",
+  "plazas": 5,
+  "puesto": "Técnico/a de Relaciones Laborales",
+  "grupo": "A2",
+  "bases": "Boletín Oficial de la Provincia de Santa Cruz de Tenerife n.º 136, de 11 de noviembre de 2026"
+ },
+ "BOE-A-2026-24465": {
+  "plazo": {
+   "cifra": 20,
+   "unidad": "dia",
+   "calificacion": "habiles",
+   "desde": "BOE",
+   "frase": "plazo de presentación de solicitudes será de veinte días hábiles a contar desde el siguiente al de la publicación de esta resolución en el «Boletín Oficial del Estado»"
+  },
+  "fin": "20261221",
+  "sistema": "concurso-oposición",
+  "plazas": 1,
+  "puesto": "Oficial/a de Primera de Jardinería de la plantilla de personal laboral fijo",
+  "bases": "Diari Oficial de la Generalitat Valenciana n.º 216, de 12 de noviembre de 2026",
+  "laboral": true
+ },
+ "BOE-A-2026-24466": {
+  "plazo": {
+   "cifra": 20,
+   "unidad": "dia",
+   "calificacion": "habiles",
+   "desde": "BOE",
+   "frase": "plazo de presentación de solicitudes será de veinte días hábiles a contar desde el siguiente al de la última publicación en el «Diari Oficial de la Generalitat de Catalunya» o en el «Boletín Oficial del Estado»"
+  },
+  "fin": "20261221",
+  "sistema": "concurso-oposición",
+  "plazas": 1,
+  "puesto": "Técnico/a medio/a de gestión",
+  "grupo": "A2"
+ },
+ "BOE-A-2026-24468": {
+  "plazo": {
+   "cifra": 20,
+   "unidad": "dia",
+   "calificacion": "habiles",
+   "desde": "BOE",
+   "frase": "plazo de presentación de solicitudes será de veinte días hábiles a contar desde el siguiente al de la publicación de esta resolución en el «Boletín Oficial del Estado»"
+  },
+  "fin": "20261221",
+  "sistema": "concurso-oposición",
+  "plazas": 1,
+  "puesto": "Inspector/a de Medio Ambiente",
+  "bases": "Boletín Oficial de la Comunidad de Madrid n.º 273, de 13 de noviembre de 2026"
+ },
+ "BOE-A-2026-24469": {
+  "plazo": {
+   "cifra": 20,
+   "unidad": "dia",
+   "calificacion": "naturales",
+   "desde": "BOE",
+   "frase": "plazo de presentación de solicitudes será de veinte días naturales a contar desde el siguiente al de la publicación de esta resolución en el «Boletín Oficial del Estado»"
+  },
+  "fin": "20261211",
+  "sistema": "concurso-oposición",
+  "puesto": "Escala de Administración General",
+  "grupo": "C1"
+ },
+ "BOE-A-2026-24470": {
+  "plazo": {
+   "cifra": 20,
+   "unidad": "dia",
+   "calificacion": "habiles",
+   "desde": "BOE",
+   "frase": "plazo de presentación de solicitudes será de veinte días hábiles a contar desde el siguiente al de la publicación de esta resolución en el «Boletín Oficial del Estado»"
+  },
+  "fin": "20261221",
+  "sistema": "oposición",
+  "plazas": 1,
+  "puesto": "Administrativo/a",
+  "grupo": "C1",
+  "bases": "Boletín Oficial de la Provincia de Pontevedra n.º 217, de 11 de noviembre de 2026"
+ },
+ "BOE-A-2026-24471": {
+  "plazo": {
+   "cifra": 20,
+   "unidad": "dia",
+   "calificacion": "naturales",
+   "desde": "BOE",
+   "frase": "plazo de presentación de solicitudes será de veinte días naturales a contar desde el siguiente al de la publicación de esta resolución en el «Boletín Oficial del Estado»"
+  },
+  "fin": "20261211",
+  "sistema": "oposición",
+  "plazas": 7,
+  "puesto": "Técnico/a de Administración General",
+  "grupo": "A1",
+  "bases": "Boletín Oficial de la Provincia de Burgos n.º 216, de 13 de noviembre de 2026",
+  "reserva_discapacidad": true
+ },
+ "BOE-A-2026-24472": {
+  "plazo": {
+   "cifra": 10,
+   "unidad": "dia",
+   "calificacion": "habiles",
+   "desde": "otro boletín",
+   "frase": "plazo de presentación de solicitudes será de diez días hábiles a contar desde el siguiente al de la publicación en el «Boletín Oficial de la Provincia de Albacete»"
+  },
+  "fin": null,
+  "sistema": "concurso-oposición",
+  "plazas": 1,
+  "puesto": "Guardia Urbano/a",
+  "grupo": "E",
+  "bases": "Boletín Oficial de la Provincia de Albacete n.º 133, de 16 de noviembre de 2026"
+ },
+ "BOE-A-2026-24473": {
+  "plazo": {
+   "cifra": 10,
+   "unidad": "dia",
+   "calificacion": "habiles",
+   "desde": "BOE",
+   "frase": "plazo de presentación de solicitudes será de diez días hábiles a contar desde el siguiente al de la publicación de esta resolución en el «Boletín Oficial del Estado»"
+  },
+  "fin": "20261204",
+  "sistema": "concurso-oposición",
+  "plazas": 1,
+  "puesto": "Arquitecto/a Superior",
+  "grupo": "A1",
+  "bases": "Boletín Oficial de la Provincia de Valencia n.º 201, de 20 de octubre de 2026"
+ },
+ "BOE-A-2026-24474": {
+  "plazo": {
+   "cifra": 20,
+   "unidad": "dia",
+   "calificacion": "habiles",
+   "desde": "BOE",
+   "frase": "plazo de presentación de instancias, exclusivamente para las plazas o puestos objeto de esta rectificación, de veinte días hábiles a partir del siguiente a la publicación de la presente resolución en el «Boletín Oficial del Estado»"
+  },
+  "fin": "20261221",
+  "bases": "Boletín Oficial de la Provincia de Córdoba n.º 154, de 11 de agosto de 2026"
  }
 }
