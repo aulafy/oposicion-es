@@ -22,7 +22,7 @@ function crearRutasPlaza(leer) {
 
   // Bancos que comparten temario con comunidades autónomas, ayuntamientos y servicios de salud: suman también la frecuencia
   // de sus exámenes. Los bancos de la AGE y de Justicia y los simulacros oficiales usan solo la de exámenes del Estado.
-  const OTRAS = new Set(['ayto', 'sms', 'c1_i_iii', 'organo_municipal', 'estatutario']);
+  const OTRAS = new Set(['ayto', 'sms', 'c1_i_iii', 'organo_municipal', 'estatutario', 'carm_c1']);
   function peso(q, M, soloEstado) {  // las preguntas de preceptos más preguntados en exámenes salen más (como en el servidor)
     const c = q.cita || {}; const k = `${c.norma}|${c.bloque}`;
     const o = !soloEstado && OTRAS.has(datos.banco[q.id]);

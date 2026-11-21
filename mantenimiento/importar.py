@@ -4,7 +4,7 @@ import json
 import shutil
 from pathlib import Path
 
-PUBLICOS = "bloque4 c1_i_iii gestion justicia justicia_org sms ayto casos procesales clasificacion silencio recursos organo_municipal permisos estatutario requisitos".split()
+PUBLICOS = "bloque4 c1_i_iii gestion justicia justicia_org sms ayto casos procesales clasificacion silencio recursos organo_municipal permisos estatutario requisitos carm_c1".split()
 DESTINO = Path(__file__).resolve().parents[1] / "web/datos"
 
 

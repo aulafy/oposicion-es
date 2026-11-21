@@ -23,7 +23,7 @@ const LETRAS = 'ABCD';
 /* ---------- Iconos (iconos.js) ---------- */
 const ALIAS = { home: 'inicio', clock: 'reloj', case: 'casos', book: 'leyes', chart: 'progreso', fire: 'llama', target: 'diana', bolt: 'rayo', grid: 'rejilla', scale: 'balanza', trash: 'papelera' };
 const ic = (n, c = '') => `<svg class="i ${c}" viewBox="0 0 24 24" aria-hidden="true">${window.ICONOS[ALIAS[n] || n] || ''}</svg>`;
-const TEMA_IC = { bloque4: 'personas', c1_i_iii: 'estado', gestion: 'monedas', justicia: 'balanza', justicia_org: 'mazo', sms: 'salud', ayto: 'ayuntamiento' };
+const TEMA_IC = { bloque4: 'personas', c1_i_iii: 'estado', gestion: 'monedas', justicia: 'balanza', justicia_org: 'mazo', sms: 'salud', ayto: 'ayuntamiento', carm_c1: 'estado' };
 
 /* ---------- Catálogo ---------- */
 const OPOS = {
@@ -33,11 +33,12 @@ const OPOS = {
   aux: { nombre: 'Auxilio Judicial', corto: 'Auxilio Judicial', grupo: 'C2', temas: ['justicia', 'justicia_org', 'c1_i_iii'], casos: ['procesales'], sim: 'aux', conv: 'justicia2025' },
   sms: { nombre: 'Servicio Murciano de Salud', corto: 'SMS · Administración', grupo: 'C1 · C2', temas: ['sms', 'c1_i_iii'], casos: ['estatutario', 'permisos', 'casos'], sim: null },
   ayto: { nombre: 'Administración Local', corto: 'Ayuntamientos', grupo: 'C1 · C2', temas: ['ayto', 'c1_i_iii'], casos: ['organo_municipal', 'silencio', 'recursos', 'casos'], sim: null },
+  carm_c1: { nombre: 'Gestión Administrativa de la Región de Murcia', corto: 'CARM · Gestión C1', grupo: 'C1', temas: ['carm_c1', 'c1_i_iii', 'bloque4'], casos: ['casos', 'silencio', 'recursos', 'permisos'], sim: null },
 };
 const TEMAS = {
   bloque4: 'Personal al servicio de las Administraciones', c1_i_iii: 'Organización del Estado y procedimiento',
   gestion: 'Gestión financiera y tributaria', justicia: 'Derecho procesal', justicia_org: 'Organización judicial y personal',
-  sms: 'Sanidad y personal estatutario', ayto: 'Régimen local',
+  sms: 'Sanidad y personal estatutario', ayto: 'Régimen local', carm_c1: 'Temario CARM C1: normas regionales y estatales',
 };
 const CASOS = {
   casos: ['Cómputo de plazos', 'Calcula el último día de un plazo según la Ley 39/2015.', 'calendario'],

@@ -16,7 +16,7 @@ Plaza es un proyecto abierto de [Aulafy.net](https://www.aulafy.net/) para pract
 
 ## Qué incluye
 
-**Oposiciones del catálogo:** Administrativo y Auxiliar del Estado, Tramitación Procesal y Administrativa, Auxilio Judicial, Administración del Servicio Murciano de Salud y Administración Local. Iremos incorporando más conforme se revisen sus temarios y ejercicios.
+**Oposiciones del catálogo:** Administrativo y Auxiliar del Estado, Tramitación Procesal y Administrativa, Auxilio Judicial, Administración del Servicio Murciano de Salud, Administración Local y Gestión Administrativa C1 de la Región de Murcia (CARM). Iremos incorporando más conforme se revisen sus temarios y ejercicios.
 
 | Si quieres… | Abre… |
 | --- | --- |
