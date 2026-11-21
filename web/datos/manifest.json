@@ -233,8 +233,8 @@
       "sha256": "f53d38b8ae2d37689b365f35e071565dabdc095e5a5676264b962279fe17373a"
     },
     "datos/leyes/BOE-A-2017-12902.json": {
-      "bytes": 1273366,
-      "sha256": "cf05c580d10ebbc6cb4877e125edc9964926c9f1e879c8383e7ae6278568c2f8"
+      "bytes": 1271056,
+      "sha256": "d610f3e3fb7d82fff5e68aacaef6eac481752339fdc2ca9cd8bd498489ca239d"
     },
     "datos/leyes/BOE-A-2018-16673.json": {
       "bytes": 256636,
@@ -289,6 +289,6 @@
       "sha256": "e2828c0cf8c7370b8db7f68b365ebe13904d6338dff3be107659d605faba04a6"
     }
   },
-  "generado": "2026-11-21T12:37:40.674985+00:00",
-  "version": "bca5f5e075e2"
+  "generado": "2026-11-21T18:46:43.705182+00:00",
+  "version": "63e84b963256"
 }
