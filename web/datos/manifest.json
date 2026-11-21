@@ -1,8 +1,8 @@
 {
   "ficheros": {
     "datos/bancos.json": {
-      "bytes": 13450444,
-      "sha256": "4048cf73fd6123e05eb2bc4a30850bcfe5d0e1b2cb9c9350fde133618a87f7e2"
+      "bytes": 13487927,
+      "sha256": "b965d780dcdf2623c969ea10a8cb97a1f718a9b4c89b76ec3cb3985352c346ca"
     },
     "datos/explicaciones.json": {
       "bytes": 3319042,
@@ -268,9 +268,17 @@
       "bytes": 503134,
       "sha256": "8106cb6e46eb7282392653129ba63d78d3099708bb63968a3c9b73c40d87ba5e"
     },
+    "datos/leyes/BORM-s-2010-15641.json": {
+      "bytes": 61351,
+      "sha256": "f3c7ab0dde5145623c90a9a10df0ffd5940036b74e661a29122a5db16ba6b85f"
+    },
+    "datos/leyes/BORM-s-2017-4918.json": {
+      "bytes": 32848,
+      "sha256": "b062e4afd0784e965f0aaff63e9895a7bfb5a54b49c18f2def18b214d5a280f3"
+    },
     "datos/meta.json": {
-      "bytes": 27726,
-      "sha256": "1ff7971315562418cc934815fdaa4baa3326fddeabe5ff5da3063047443c2776"
+      "bytes": 28133,
+      "sha256": "177922f7ca47d1358bc2de8605590f032f87523556beccd84ce99ba2872473a4"
     },
     "datos/oposiciones.json": {
       "bytes": 1042150,
@@ -281,6 +289,6 @@
       "sha256": "e2828c0cf8c7370b8db7f68b365ebe13904d6338dff3be107659d605faba04a6"
     }
   },
-  "generado": "2026-11-21T12:28:19.585656+00:00",
-  "version": "e94ef0dff393"
+  "generado": "2026-11-21T12:37:40.674985+00:00",
+  "version": "bca5f5e075e2"
 }
